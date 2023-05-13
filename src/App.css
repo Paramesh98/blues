@@ -1,0 +1,28 @@
+parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.child {
+  flex-basis: 45%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.child img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.child h2 {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .child {
+    flex-basis: 100%;
+  }
+}

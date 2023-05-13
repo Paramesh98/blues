@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c4675a46.css",
+    "main.js": "/static/js/main.e8d0025e.js",
+    "static/js/787.81a0e25e.chunk.js": "/static/js/787.81a0e25e.chunk.js",
+    "static/media/BoyChat.png": "/static/media/BoyChat.a2aa63b81ff39a8e4659.png",
+    "static/media/Boy3Chat.png": "/static/media/Boy3Chat.5688861dc1fef64c37ec.png",
+    "static/media/Boy2Chat.png": "/static/media/Boy2Chat.4c907b7b5785c99d8d0e.png",
+    "static/media/girlChat.png": "/static/media/girlChat.2f87d1ffab543abde83c.png",
+    "static/media/messageScreen1.png": "/static/media/messageScreen1.4a2f93320ec73a29c1ec.png",
+    "static/media/desktop.png": "/static/media/desktop.154d88a8586b6c6df257.png",
+    "static/media/allGroup.png": "/static/media/allGroup.9e177f5dcd39d80d9f71.png",
+    "static/media/blueChatScreen.png": "/static/media/blueChatScreen.9ce3afdfde107269bf7f.png",
+    "static/media/chatScreen.png": "/static/media/chatScreen.892214e1ffef4872bbb6.png",
+    "static/media/allText.png": "/static/media/allText.6de1a05ae5ff27b27215.png",
+    "static/media/bluechat.png": "/static/media/bluechat.54626f6cf1c217f5033b.png",
+    "static/media/ContactChat.png": "/static/media/ContactChat.67f4b7ad33b379a41d42.png",
+    "index.html": "/index.html",
+    "main.c4675a46.css.map": "/static/css/main.c4675a46.css.map",
+    "main.e8d0025e.js.map": "/static/js/main.e8d0025e.js.map",
+    "787.81a0e25e.chunk.js.map": "/static/js/787.81a0e25e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4675a46.css",
+    "static/js/main.e8d0025e.js"
+  ]
+}
