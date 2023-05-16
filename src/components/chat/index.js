@@ -61,31 +61,29 @@ const ImageDiv = ({ImageName,Description}) =>{
     <Container >
          <style>{fadeFromLeftAnimation}</style>
          {/* First Div Start */}
-      <Row style={{ animation: 'fade-in 0.5s ease-out forwards' }}>
+      <Row className='h-50' style={{ animation: 'fade-in 0.5s ease-out forwards' }}>
         <Col md={6} className="text-center">
         <p className='mr-4' style={{fontFamily:'Helvetica Neue',fontSize:'2.75rem'}}>BlueSecures Messaging</p>
         <p className='mr-4' style={{fontFamily:'Helvetica Neue',fontSize:'18px'}}>Enable sales, support & deskless employees on BlueSecures to engage with customers on <span style={{color:'#1AD03F'}}>WhatsApp.</span></p>
           <Image src={girlImage} fluid />
-          <p className='mt-4'>Secure Customer & Company Business Data</p>
+          <p className='mt-4' style={{fontFamily:'Helvetica Neue'}}>Secure Customer & Company Business Data</p>
           <Button variant="primary">Know More</Button>{' '}
           
         </Col>
-        <Col md={6} className="text-center">
+        <Col md={6} className="text-center" style={{backgroundColor:'#F9F9F9'}}>
         <p className='mr-4' style={{fontFamily:'Helvetica Neue',fontSize:'2.75rem'}}>BlueSecures Messaging</p>
         <p className='mr-4' style={{fontFamily:'Helvetica Neue',fontSize:'18px'}}>AI driven marketing platform to engage
  with customers on <span style={{color:'#1AD03F'}}>WhatsApp.</span></p>
           <Image src={chatScreen} fluid />
-          <p className='mt-4'>Campaigns, Notifications, Payment Links & Chatbots</p>
+          <p className='mt-4' style={{fontFamily:'Helvetica Neue'}}>Campaigns, Notifications, Payment Links & Chatbots</p>
           <Button variant="primary">Know More</Button>{' '}
-
-          
         </Col>
       </Row>
       {/* First Div End */}
 
 
       {/* Second Div Start */}
-      <Row>
+      <Row >
         <Col md={6}>
         <p className='mr-4' style={{fontFamily:'Helvetica Neue',fontSize:'2.5rem'}}></p>
           <Image src={Bluechat} fluid />
@@ -102,12 +100,12 @@ const ImageDiv = ({ImageName,Description}) =>{
             
           <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={Icon3}  style={{ width: 30, height: 30 }}/>
-                <p className='m-4'> <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span> Business API</p>
+                <p className='m-4' style={{fontFamily:'Helvetica Neue'}}> <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span> Business API</p>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={Icon2}  style={{ width: 30, height: 30 }}/>
-                <p className='m-4'> Users on Blue and customers on <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span></p>
+                <p className='m-4' style={{fontFamily:'Helvetica Neue'}}> Users on Blue and customers on <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span></p>
           </div>
         </Col>
       </Row>
@@ -121,22 +119,22 @@ to millions of users on
              <span style={{color:'#1AD03F'}}> WhatsApp.</span></p></b>
           <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={Icon1}  style={{ width: 30, height: 30 }}/>
-                <p className='m-4'> <span style={{fontWeight:'bold',color:'#00ACFF'}}>BlueSecures API Platform  </span> ( end to end encrypted )</p>
+                <p className='m-4' style={{fontFamily:'Helvetica Neue'}}> <span style={{fontWeight:'bold',color:'#00ACFF'}}>BlueSecures API Platform  </span> ( end to end encrypted )</p>
           </div>
             
           <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={Icon3}  style={{ width: 30, height: 30 }}/>
-                <p className='m-4'> <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span> Business API</p>
+                <p className='m-4' style={{fontFamily:'Helvetica Neue'}}> <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span> Business API</p>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={Icon2}  style={{ width: 30, height: 30 }}/>
-                <p className='m-4'> Chatbot on <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span></p>
+                <p className='m-4' style={{fontFamily:'Helvetica Neue'}}> Chatbot on <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span></p>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={Icon4}  style={{ width: 30, height: 30 }}/>
-                <p className='m-4'> Engage with millions of users on <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span></p>
+                <p className='m-4' style={{fontFamily:'Helvetica Neue'}}> Engage with millions of users on <span style={{fontWeight:'bold',color:'#1AD03F'}}>WhatsApp</span></p>
           </div>
         </Col>
         <Col md={6} className="text-center">
