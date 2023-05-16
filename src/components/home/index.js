@@ -21,6 +21,9 @@ import Data from "../../assets/png/Data.png";
 import Certification from "../../assets/png/Certification.png";
 import Header from "../header";
 import Footer from "../footer";
+import { Heading } from "../heading";
+import { Content } from "../content";
+import "./home.css";
 
 const Home = () => {
   const fadeFromLeftAnimation = `
@@ -45,7 +48,6 @@ const Home = () => {
     );
   };
 
-  
   const ImageDiv = ({ ImageName, Description }) => {
     return (
       <div
@@ -55,14 +57,14 @@ const Home = () => {
           borderRadius: "10px",
         }}
       >
-        <Image src={ImageName} style={{ width: 30, height: 30 }} />
+        <Image src={ImageName} style={{ width: 40, height: 40 }} />
         <p className="m-4"> {Description}</p>
       </div>
     );
   };
   return (
-    <>
-    <Header />
+    <div className="home-div">
+      <Header />
       <Container>
         <style>{fadeFromLeftAnimation}</style>
         {/* First Div Start */}
@@ -71,31 +73,24 @@ const Home = () => {
           style={{ animation: "fade-in 0.5s ease-out forwards" }}
         >
           <Col md={6} className="text-center">
-            {/* <p className='mr-4' style={{fontFamily:'Helvetica Neue',fontSize:'2.75rem'}}>BlueSecures Messaging</p>
-        <p className='mr-4' style={{fontFamily:'Helvetica Neue',fontSize:'18px'}}>Enable sales, support & deskless employees on BlueSecures to engage with customers on <span style={{color:'#1AD03F'}}>WhatsApp.</span></p> */}
             <Image src={girlImage} fluid />
-            {/* <p className='mt-4'>Secure Customer & Company Business Data</p>
-          <Button variant="primary">Know More</Button>{' '} */}
           </Col>
-          <Col md={6} className="text-center">
-            <p
-              className="mr-4"
-              style={{ fontFamily: "Helvetica Neue", fontSize: "2.75rem" }}
-            >
+          <Col md={6}>
+            <Heading style={{ textAlign: "left" }}>
               BlueSecures Messaging
-            </p>
-            <p
-              className="mr-4"
+            </Heading>
+            <Content
               style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "18px",
+                fontWeight: 600,
                 color: "#00ACFF",
+                width: "100%",
+                margin: "0",
+                textAlign: "left",
               }}
             >
-              {" "}
               End to End Encrypted
-            </p>
-            <p className="mt-4" style={{ color: "#526A7E" }}>
+            </Content>
+            <p style={{ color: "#526A7E", marginTop: "40px" }}>
               Enable sales, support & deskless employees on BlueSecures to
               engage with customers on{" "}
               <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
@@ -109,7 +104,7 @@ const Home = () => {
         {/* First Div End */}
 
         {/* Second Div Start */}
-        <Row className="m-4 align-items-center">
+        <Row style={{ marginTop: "140px" }}>
           <Col md={6}>
             <p
               className="mr-4"
@@ -118,21 +113,19 @@ const Home = () => {
               Your company is losing customers, revenues & critical business
               data viz.,
             </p>
-            <p
-              className="mr-4"
-              style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "2.75rem",
-                color: "#183B56",
-              }}
-            >
+            <Heading style={{ textAlign: "left", lineHeight: "64px" }}>
               Employees on{" "}
-              <span style={{ color: "#00ACFF" }}>BlueSecures </span> can send
-              and receive messages with their customers who are on{" "}
-              <span style={{ color: "#1AD03F" }}> WhatsApp.</span>
-            </p>
+              <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
+                BlueSecures{" "}
+              </span>{" "}
+              can send and receive messages with their customers who are on{" "}
+              <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                {" "}
+                WhatsApp.
+              </span>
+            </Heading>
             <p
-              className="mr-4"
+              className="mr-4 mt-5"
               style={{
                 fontFamily: "Helvetica Neue",
                 fontSize: "1.56rem",
@@ -150,226 +143,351 @@ const Home = () => {
         {/* Second Div End */}
 
         {/* Third Div Start */}
-        <Row className="m-4 align-items-center">
-        <Col md={6} className="text-center">
+        <Row style={{ marginTop: "140px" }} className=" align-items-center">
+          <Col md={6} className="text-center">
             <Image src={blueChatScreen} fluid />
           </Col>
           <Col md={6}>
-          <p
-              className="mr-4"
+            <Content
               style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "18px",
+                fontWeight: 600,
                 color: "#00ACFF",
+                width: "100%",
+                margin: "0",
+                textAlign: "left",
+                marginBottom: "10px",
               }}
             >
               {" "}
               How It Works?
-            </p>
-            <p
-              className="mr-4"
-              style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "2.75rem",
-                color: "#183B56",
-              }}
-            >
-              <span style={{ color: "#00ACFF" }}>BlueSecures </span> API Platform
-            </p>
-           <ul>
-            <li style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "18px",
-                color: "#526A7E",
-              }}>Employees market to customers who are on WhatsApp.</li>
-              <li style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "18px",
-                color: "#526A7E",
-              }}>Employees within your company use <span style={{ color: "#00ACFF" }}>BlueSecures</span>.</li>
-           </ul>
+            </Content>
+            <Heading>
+              <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
+                BlueSecures{" "}
+              </span>{" "}
+              API Platform
+            </Heading>
+            <ul>
+              <li
+                style={{
+                  fontFamily: "Helvetica Neue",
+                  fontSize: "15px",
+                  color: "#526A7E",
+                  marginTop: "40px",
+                }}
+              >
+                Employees market to customers who are on{" "}
+                <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                  WhatsApp
+                </span>
+                .
+              </li>
+              <li
+                style={{
+                  fontFamily: "Helvetica Neue",
+                  fontSize: "15px",
+                  color: "#526A7E",
+                }}
+              >
+                Employees within your company use{" "}
+                <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
+                  BlueSecures
+                </span>
+                .
+              </li>
+            </ul>
           </Col>
         </Row>
         {/* Third Div End */}
-        </Container>
+      </Container>
 
-        {/* Forth Div Start */}
-        <Row className="m-4 align-items-center" style={{backgroundColor:'#F9F9F9'}}>
+      {/* Forth Div Start */}
+      <Row
+        className="align-items-center"
+        style={{
+          backgroundColor: "#F9F9F9",
+          marginTop: "140px",
+          paddingBottom: "40px",
+        }}
+      >
         <Col md={12} className="text-center mt-4">
-              <p style={{color:'#183B56',fontSize:'2.75rem'}}>Enable sales to sell more and engage better with customers</p>
+          <Heading
+            style={{ paddingTop: "40px", width: "60%", margin: "0 auto" }}
+          >
+            Enable sales to sell more and engage better with customers
+          </Heading>
         </Col>
-        <Col md={12} className="text-center m-4">  
-                          
-              <Row className="justify-content-center">
-                <Col className="m-4" md={3} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={group} className="mt-4" style={{width:30,height:30}}/>
-                        <p>Add WhatsApp users to groups in BlueSecures</p>
-                    </div>
-                </Col>
-                <Col className="m-4" md={3} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={network} className="mt-4" style={{width:30,height:30}}/>
-                        <p>Broadcast marketing collateral to customers who are on  <span style={{ color: "#1AD03F" ,fontWeight:'bold'}}> WhatsApp.</span></p>
-                    </div>
-                </Col>
-                <Col className="m-4" md={3} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={share} className="mt-4" style={{width:30,height:30}}/>
-                        <p>Assign chat history to new sales person when existing one leaves</p>
-                    </div>
-                </Col>
-              </Row>
-              
-
+        <Col md={12} className="text-center m-4">
+          <Row className="justify-content-center">
+            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={group}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p>Add WhatsApp users to groups in BlueSecures</p>
+              </div>
+            </Col>
+            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={network}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p>
+                  Broadcast marketing collateral to customers who are on{" "}
+                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                    {" "}
+                    WhatsApp.
+                  </span>
+                </p>
+              </div>
+            </Col>
+            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={share}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p>
+                  Assign chat history to new sales person when existing one
+                  leaves
+                </p>
+              </div>
+            </Col>
+          </Row>
         </Col>
+      </Row>
+      {/* Forth Div End */}
 
-       </Row>
-       {/* Forth Div End */}
+      {/* Fifth Div Start */}
+      <Row style={{ marginTop: "140px" }} className="align-items-center">
+        <Col md={12}>
+          <Container>
+            <Row>
+              <Col md={6}>
+                <Heading style={{ textAlign: "left" }}>
+                  Deskless Employees ( Sales, Support, Services..)
+                </Heading>
+                <Content
+                  style={{
+                    fontWeight: 400,
+                    fontSize: "15px",
+                    lineHeight: "25px",
+                    textAlign: "left",
+                    width: "100%",
+                    marginBottom: "20px",
+                  }}
+                >
+                  Use{" "}
+                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                    social messaging apps
+                  </span>{" "}
+                  because they don't have (or) use email?
+                </Content>
 
+                <p
+                  style={{
+                    fontFamily: "Helvetica Neue",
+                    fontSize: "15px",
+                    color: "#526A7E",
+                  }}
+                >
+                  Integrate{" "}
+                  <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
+                    BlueSecures
+                  </span>{" "}
+                  into employee communication process
+                </p>
+                <ImageDiv
+                  ImageName={network2}
+                  Description="Broadcast, Events | Birthdays | Policies | Update etc."
+                />
+              </Col>
 
-       {/* Fifth Div Start */}
-       <Row className="m-4 align-items-center">
-          <Col md={6}>
-            <p
-              className="mr-4"
+              <Col md={6} className="text-center">
+                <Image src={Boy2Chat} fluid />
+              </Col>
+            </Row>
+          </Container>
+        </Col>
+      </Row>
+      {/* Fifth Div End */}
+
+      <Row
+        style={{ marginTop: "70px" }}
+        className="align-items-center box-icons"
+      >
+        <Col md={12} className="text-center mt-4">
+          <Heading>Company Admin Manages User Rights</Heading>
+        </Col>
+        <Col md={12} className="text-center m-4">
+          <Row className="justify-content-center">
+            <Col className="m-4" md={2} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={adminIcon1}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p style={{ color: "#526A7E" }}>Add User</p>
+              </div>
+            </Col>
+            <Col
+              className="m-4"
+              md={2}
               style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "2.75rem",
-                color: "#183B56",
+                backgroundColor: "white",
+                borderLeft: "1px solid #000000",
+                borderRight: "1px solid #000000",
               }}
             >
-              Deskless Employees ( Sales, Support, Services..)
-            </p>
-            <p
-              className="mr-4"
+              <div>
+                <Image
+                  src={adminIcon2}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p style={{ color: "#526A7E" }}>Download data to mobile</p>
+              </div>
+            </Col>
+            <Col className="m-4" md={2} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={adminIcon3}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p style={{ color: "#526A7E" }}>Cut & Paste</p>
+              </div>
+            </Col>
+          </Row>
+
+          {/* Second  */}
+          <Row className="justify-content-center">
+            <Col className="m-4" md={2} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={adminIcon4}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p style={{ color: "#526A7E" }}>Share Externally</p>
+              </div>
+            </Col>
+            <Col
+              className="m-4"
+              md={2}
               style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "15px",
-                color: "#526A7E",
+                backgroundColor: "white",
+                borderLeft: "1px solid #000000",
+                borderRight: "1px solid #000000",
               }}
             >
-              Use <span style={{ color: "#1AD03F" ,fontWeight:'bold'}}>social messaging apps</span> because they don't have (or) use email?
-            </p>
+              <div>
+                <Image
+                  src={adminIcon5}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p style={{ color: "#526A7E" }}>
+                  Send to{" "}
+                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                    Whatsapp
+                  </span>
+                </p>
+              </div>
+            </Col>
+            <Col className="m-4" md={2} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={adminIcon6}
+                  className="mt-4"
+                  style={{ width: 40, height: 40 }}
+                />
+                <p style={{ color: "#526A7E" }}>Disable Screenshot</p>
+              </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
 
-            <p
-              className="mr-4"
-              style={{
-                fontFamily: "Helvetica Neue",
-                fontSize: "15px",
-                color: "#526A7E",
-              }}
-            >
-              Integrate <span style={{ color: "#00ACFF",fontWeight:'bold' }}>BlueSecures</span> into employee communication process
-            </p>
-            <ImageDiv ImageName={network2} Description='Broadcast, Events | Birthdays | Policies | Update etc.' />
-          </Col>
-
-          <Col md={6} className="text-center">
-            <Image src={Boy2Chat} fluid />
-          </Col>
-        </Row>
-        {/* Fifth Div End */}
-
-        <Row className="m-4 align-items-center">
+      {/* Seventh Div Start */}
+      <Row
+        className="align-items-center"
+        style={{
+          backgroundColor: "#F9F9F9",
+          paddingTop: "40px",
+          paddingBottom: "30px",
+          marginBottom: "70px",
+        }}
+      >
         <Col md={12} className="text-center mt-4">
-              <p style={{color:'#183B56',fontSize:'2.75rem'}}>Company Admin Manages User Rights</p>
+          <Heading>Integrations & Certifications</Heading>
         </Col>
-        <Col md={12} className="text-center m-4">  
-                          
-              <Row className="justify-content-center">
-                <Col className="m-4" md={2} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={adminIcon1} className="mt-4" style={{width:30,height:30}}/>
-                        <p style={{color:'#526A7E'}}>Add User</p>
-                    </div>
-                </Col>
-                <Col className="m-4" md={2} style={{backgroundColor:'white', borderLeft: '1px solid #000000', borderRight: '1px solid #000000' }}>
-                    <div>
-                        <Image src={adminIcon2} className="mt-4" style={{width:30,height:30}}/>
-                        <p style={{color:'#526A7E'}}>Download data to mobile</p>
-                    </div>
-                </Col>
-                <Col className="m-4" md={2} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={adminIcon3} className="mt-4" style={{width:30,height:30}}/>
-                        <p style={{color:'#526A7E'}}>Cut & Paste</p>
-                    </div>
-                </Col>
-              </Row>
-
-
-              {/* Second  */}
-              <Row className="justify-content-center">
-                <Col className="m-4" md={2} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={adminIcon4} className="mt-4" style={{width:30,height:30}}/>
-                        <p style={{color:'#526A7E'}}>Share Externally</p>
-                    </div>
-                </Col>
-                <Col className="m-4" md={2} style={{backgroundColor:'white', borderLeft: '1px solid #000000', borderRight: '1px solid #000000' }}>
-                    <div>
-                        <Image src={adminIcon5} className="mt-4" style={{width:30,height:30}}/>
-                        <p style={{color:'#526A7E'}}>Send to <span style={{ color: "#1AD03F" ,fontWeight:'bold'}}>Whatsapp</span></p>
-                    </div>
-                </Col>
-                <Col className="m-4" md={2} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={adminIcon6} className="mt-4" style={{width:30,height:30}}/>
-                        <p style={{color:'#526A7E'}}>Disable Screenshot</p>
-                    </div>
-                </Col>
-              </Row>
-
+        <Col md={12} className="text-center m-4">
+          <Row className="justify-content-center">
+            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={Integration}
+                  className="mt-4"
+                  style={{ width: 70, height: 70 }}
+                />
+                <p
+                  className="m-4"
+                  style={{ color: "#183B56", fontWeight: "bold" }}
+                >
+                  Integrations
+                </p>
+                <p>
+                  Integrate with Active Directory, HRM, CRM, SCM & ERP Systems
+                  etc
+                </p>
+              </div>
+            </Col>
+            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={Data}
+                  className="mt-4"
+                  style={{ width: 70, height: 70 }}
+                />
+                <p
+                  className="m-4"
+                  style={{ color: "#183B56", fontWeight: "bold" }}
+                >
+                  Data storage
+                </p>
+                <p>Public Cloud, Private Cloud or on-premise</p>
+              </div>
+            </Col>
+            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+              <div>
+                <Image
+                  src={Certification}
+                  className="mt-4"
+                  style={{ width: 70, height: 70 }}
+                />
+                <p
+                  className="m-4"
+                  style={{ color: "#183B56", fontWeight: "bold" }}
+                >
+                  Certifications
+                </p>
+                <p>Certifications - ISO, VAPT,HIPAA, “ISO 27001”</p>
+              </div>
+            </Col>
+          </Row>
         </Col>
-        </Row>
+      </Row>
+      {/* Seventh Div End */}
 
-
-
-        {/* Seventh Div Start */}
-        <Row className="m-4 align-items-center" style={{backgroundColor:'#F9F9F9'}}>
-        <Col md={12} className="text-center mt-4">
-              <p style={{color:'#183B56',fontSize:'2.75rem'}}>Integrations & Certifications</p>
-        </Col>
-        <Col md={12} className="text-center m-4">  
-                          
-              <Row className="justify-content-center">
-                <Col className="m-4" md={3} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={Integration} className="mt-4" style={{width:70,height:70}}/>
-                        <p className="m-4" style={{color:'#183B56',fontWeight:'bold'}}>Integrations</p>
-                        <p>Integrate with Active Directory, HRM, CRM, SCM & ERP Systems etc</p>
-                    </div>
-                </Col>
-                <Col className="m-4" md={3} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={Data} className="mt-4" style={{width:70,height:70}}/>
-                        <p className="m-4" style={{color:'#183B56',fontWeight:'bold'}}>Data storage</p>
-                        <p>Public Cloud, Private Cloud or on-premise</p>
-                    </div>
-                </Col>
-                <Col className="m-4" md={3} style={{backgroundColor:'white'}}>
-                    <div>
-                        <Image src={Certification} className="mt-4" style={{width:70,height:70}}/>
-                        <p className="m-4" style={{color:'#183B56',fontWeight:'bold'}}>Certifications</p>
-                        <p>Certifications - ISO, VAPT,HIPAA, “ISO 27001”</p>
-                    </div>
-                </Col>
-              </Row>
-              
-
-        </Col>
-
-       </Row>
-       {/* Seventh Div End */}
-        
-
-        
-        
-        
       <Footer />
-      
-    </>
+    </div>
   );
 };
 

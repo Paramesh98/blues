@@ -1,0 +1,12 @@
+* {
+  color: #526a7e;
+}
+
+.box-icons p {
+  margin-top: 15px;
+  font-weight: 600;
+}
+.home-div {
+  width: 100%;
+  overflow: hidden;
+}

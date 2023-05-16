@@ -1,0 +1,12 @@
+.footer h5 {
+  color: #183b56;
+}
+
+.footer .ft-bottom-banner {
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #181110;
+}
