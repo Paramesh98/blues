@@ -1,0 +1,19 @@
+.home-page {
+  padding-top: 80px;
+}
+
+@media only screen and (max-width: 500px) {
+  .home-page {
+    padding-top: 80px;
+  }
+
+  .home-enc {
+  }
+  .box-item-home12 {
+    margin-top: 1.5rem !important;
+  }
+  .home-container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}

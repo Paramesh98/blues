@@ -34,6 +34,12 @@ import { Content } from "../content";
 import { CustomButton } from "../button";
 
 const Contact = () => {
+  const [width, setWidth] = useState(1000);
+
+  useEffect(() => {
+    setWidth(window.screen.width || 1000);
+  }, [window.screen.width]);
+
   const fadeFromLeftAnimation = `
   @keyframes fade-in {
     0% {
@@ -116,14 +122,27 @@ const Contact = () => {
     }, 25);
     return () => clearInterval(interval);
   }, [count2]);
+
+  const mobileHeadingFont = {
+    fontSize: "25px",
+    lineHeight: "35px",
+  };
+  const isMobile = width < 500;
   return (
-    <div style={{ overflowX: "scroll", width: "100%" }}>
+    <div style={{ overflowX: "hidden", width: "100%" }}>
       <Header />
       <Container>
         <style>{fadeFromLeftAnimation}</style>
         <Row style={{ marginTop: "70px" }}>
           <Col md={6}>
-            <Heading style={{ textAlign: "left" }}>BlueSecures AI</Heading>
+            <Heading
+              style={{
+                textAlign: "left",
+                ...(isMobile && { ...mobileHeadingFont, marginTop: "50px" }),
+              }}
+            >
+              BlueSecures AI
+            </Heading>
             <b>
               <Content
                 style={{
@@ -184,7 +203,11 @@ const Contact = () => {
               <CustomButton>Request Demo</CustomButton>{" "}
             </div>
           </Col>
-          <Col md={6} className="text-center">
+          <Col
+            md={6}
+            className="text-center"
+            style={{ ...(isMobile && { marginTop: "50px" }) }}
+          >
             <Image src={ContactChat} fluid />
           </Col>
         </Row>
@@ -216,7 +239,7 @@ const Contact = () => {
         style={{ marginTop: "70px", background: "#F9F9F9", paddingTop: "30px" }}
       >
         <Col md={12} className="text-center mt-4">
-          <Heading>
+          <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
             Why engage with customers on{" "}
             <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
               WhatsApp?
@@ -225,7 +248,7 @@ const Contact = () => {
         </Col>
         <Col md={12} className="text-center m-4">
           <Row className="justify-content-center">
-            <Col className="m-4" md={3}>
+            <Col className="p-4" md={3}>
               <div>
                 <p
                   style={{
@@ -241,7 +264,7 @@ const Contact = () => {
               </div>
             </Col>
             <Col
-              className="m-4"
+              className="p-4"
               md={2}
               style={{
                 borderLeft: "1px solid #000000",
@@ -262,7 +285,7 @@ const Contact = () => {
                 <Content style={{ fontSize: "24px" }}>Open Documents</Content>
               </div>
             </Col>
-            <Col className="m-4" md={3}>
+            <Col className="p-4" md={3}>
               <div>
                 <p
                   style={{
@@ -288,14 +311,29 @@ const Contact = () => {
       
       */}
 
-      <Row style={{ marginTop: "70px" }} className="align-items-center">
+      <Row
+        style={{ marginTop: "70px", ...(isMobile && { padding: "30px" }) }}
+        className="align-items-center"
+      >
         <Col md={6}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <Image src={Boy3Chat} fluid style={{ width: "70%" }} />
           </div>
         </Col>
         <Col md={6}>
-          <Heading style={{ textAlign: "left", lineHeight: "64px" }}>
+          <Heading
+            style={{
+              textAlign: "left",
+              lineHeight: "64px",
+              ...(isMobile && mobileHeadingFont),
+              ...(isMobile && { marginTop: "30px" }),
+            }}
+          >
             Integrate Excel, CRM, Order Management, billing systems with{" "}
             <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
               BlueSecures{" "}
@@ -336,10 +374,20 @@ const Contact = () => {
        *
        */}
 
-      <Row className="align-items-center" style={{ marginTop: "140px" }}>
+      <Row
+        className="align-items-center"
+        style={{ marginTop: "140px", ...(isMobile && { marginTop: "30px" }) }}
+      >
         <Col md={6}>
-          <div style={{ paddingLeft: "140px" }}>
-            <Heading style={{ textAlign: "left" }}>
+          <div
+            style={{
+              paddingLeft: "140px",
+              ...(isMobile && { padding: "30px" }),
+            }}
+          >
+            <Heading
+              style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
+            >
               Integrate{" "}
               <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
                 BlueSecures{" "}
@@ -379,7 +427,11 @@ const Contact = () => {
         </Col>
 
         <Col md={6} className="text-center">
-          <Image src={messageScreen1} fluid />
+          <Image
+            src={messageScreen1}
+            fluid
+            style={{ ...(isMobile && { width: "90%" }) }}
+          />
         </Col>
       </Row>
 
@@ -391,13 +443,16 @@ const Contact = () => {
           paddingTop: "70px",
           paddingBottom: "70px",
           background: "#F9F9F9",
+          ...(isMobile && { padding: "30px" }),
         }}
       >
         <Col md={6} className="text-center">
           <Image src={allText} fluid />
         </Col>
         <Col md={6}>
-          <Heading style={{ textAlign: "left" }}>
+          <Heading
+            style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
+          >
             {" "}
             Integrate with billing platforms and automate reminders with payment
             links
@@ -433,8 +488,13 @@ const Contact = () => {
         className="align-items-center"
         style={{ marginBottom: "100px", marginTop: "70px" }}
       >
-        <Col md={6} style={{ paddingLeft: "140px" }}>
-          <Heading style={{ textAlign: "left" }}>
+        <Col
+          md={6}
+          style={{ paddingLeft: "140px", ...(isMobile && { padding: "30px" }) }}
+        >
+          <Heading
+            style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
+          >
             Deploy chatbots on{" "}
             <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
               WhatsApp
@@ -449,7 +509,8 @@ const Contact = () => {
               fontSize: "25px",
             }}
           >
-            Integrate with
+            {" "}
+            Integrate with{" "}
             <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
               BlueSecures
             </span>{" "}

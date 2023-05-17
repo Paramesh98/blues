@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import girlImage from "../../assets/png/girlChat.png";
 import chatScreen from "../../assets/png/chatScreen.png";
@@ -26,6 +26,11 @@ import { Content } from "../content";
 import "./home.css";
 
 const Home = () => {
+  const [width, setWidth] = useState(1000);
+
+  useEffect(() => {
+    setWidth(window.screen.width || 1000);
+  }, [window.screen.width]);
   const fadeFromLeftAnimation = `
   @keyframes fade-in {
     0% {
@@ -62,21 +67,35 @@ const Home = () => {
       </div>
     );
   };
+
+  const mobileHeadingFont = {
+    fontSize: "25px",
+    lineHeight: "35px",
+  };
+  const isMobile = width < 500;
   return (
     <div className="home-div">
       <Header />
-      <Container>
+      <Container className="content-page">
         <style>{fadeFromLeftAnimation}</style>
         {/* First Div Start */}
         <Row
           className="align-items-center"
-          style={{ animation: "fade-in 0.5s ease-out forwards" }}
+          style={{
+            animation: "fade-in 0.5s ease-out forwards",
+            ...(isMobile && { padding: "30px" }),
+          }}
         >
           <Col md={6} className="text-center">
             <Image src={girlImage} fluid />
           </Col>
           <Col md={6}>
-            <Heading style={{ textAlign: "left" }}>
+            <Heading
+              style={{
+                textAlign: "left",
+                ...(isMobile && { ...mobileHeadingFont, marginTop: "20px" }),
+              }}
+            >
               BlueSecures Messaging
             </Heading>
             <Content
@@ -104,7 +123,12 @@ const Home = () => {
         {/* First Div End */}
 
         {/* Second Div Start */}
-        <Row style={{ marginTop: "140px" }}>
+        <Row
+          style={{
+            marginTop: "140px",
+            ...(isMobile && { marginTop: "30px", padding: "30px" }),
+          }}
+        >
           <Col md={6}>
             <p
               className="mr-4"
@@ -113,7 +137,13 @@ const Home = () => {
               Your company is losing customers, revenues & critical business
               data viz.,
             </p>
-            <Heading style={{ textAlign: "left", lineHeight: "64px" }}>
+            <Heading
+              style={{
+                textAlign: "left",
+                lineHeight: "64px",
+                ...(isMobile && mobileHeadingFont),
+              }}
+            >
               Employees on{" "}
               <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
                 BlueSecures{" "}
@@ -143,7 +173,13 @@ const Home = () => {
         {/* Second Div End */}
 
         {/* Third Div Start */}
-        <Row style={{ marginTop: "140px" }} className=" align-items-center">
+        <Row
+          style={{
+            marginTop: "140px",
+            ...(isMobile && { marginTop: "30px", padding: "30px" }),
+          }}
+          className=" align-items-center"
+        >
           <Col md={6} className="text-center">
             <Image src={blueChatScreen} fluid />
           </Col>
@@ -161,7 +197,7 @@ const Home = () => {
               {" "}
               How It Works?
             </Content>
-            <Heading>
+            <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
               <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
                 BlueSecures{" "}
               </span>{" "}
@@ -212,7 +248,12 @@ const Home = () => {
       >
         <Col md={12} className="text-center mt-4">
           <Heading
-            style={{ paddingTop: "40px", width: "60%", margin: "0 auto" }}
+            style={{
+              paddingTop: "40px",
+              width: "60%",
+              margin: "0 auto",
+              ...(isMobile && mobileHeadingFont),
+            }}
           >
             Enable sales to sell more and engage better with customers
           </Heading>
@@ -269,7 +310,12 @@ const Home = () => {
           <Container>
             <Row>
               <Col md={6}>
-                <Heading style={{ textAlign: "left" }}>
+                <Heading
+                  style={{
+                    textAlign: "left",
+                    ...(isMobile && mobileHeadingFont),
+                  }}
+                >
                   Deskless Employees ( Sales, Support, Services..)
                 </Heading>
                 <Content
@@ -322,7 +368,9 @@ const Home = () => {
         className="align-items-center box-icons"
       >
         <Col md={12} className="text-center mt-4">
-          <Heading>Company Admin Manages User Rights</Heading>
+          <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+            Company Admin Manages User Rights
+          </Heading>
         </Col>
         <Col md={12} className="text-center m-4">
           <Row className="justify-content-center">
@@ -426,7 +474,9 @@ const Home = () => {
         }}
       >
         <Col md={12} className="text-center mt-4">
-          <Heading>Integrations & Certifications</Heading>
+          <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+            Integrations & Certifications
+          </Heading>
         </Col>
         <Col md={12} className="text-center m-4">
           <Row className="justify-content-center">
