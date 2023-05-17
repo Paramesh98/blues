@@ -10,6 +10,7 @@ import {
   Youtube,
 } from "react-bootstrap-icons";
 import "./footer.css";
+import { Link } from "react-router-dom";
 const textStyle = { color: "#526A7E" };
 const Footer = () => {
   return (
@@ -34,7 +35,7 @@ const Footer = () => {
             <h5>Overview</h5>
             <ul className="list-unstyled">
               <li className="mt-4" style={textStyle}>
-                About Us
+                <Link to="/about">About Us</Link>
               </li>
               <li className="mt-4" style={textStyle}>
                 Pricing

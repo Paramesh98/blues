@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/png/logo.png";
 import "./style.css"; // import the CSS file
 
@@ -36,33 +37,38 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto nav-container">
-            <Nav.Link
-              className="mt-1"
-              href="/"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+            <NavLink
+              activeClassName="active"
+              to="/"
+              style={{
+                textDecoration: "none",
+                padding: "8px",
+                color: "#526a7e",
+              }}
             >
-              <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
-                BlueWeb
-              </span>
-            </Nav.Link>
-            <Nav.Link
-              className="mt-1"
-              href="/about"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              BlueWeb
+            </NavLink>
+            <NavLink
+              to="/about"
+              style={{
+                textDecoration: "none",
+                padding: "8px",
+                color: "#526a7e",
+              }}
             >
               About
-            </Nav.Link>
-            <Nav.Link
-              className="mt-1"
-              href="/contact"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+            </NavLink>
+            <NavLink
+              to="/contact"
+              style={{
+                textDecoration: "none",
+                padding: "8px",
+                color: "#526a7e",
+              }}
             >
               Contact
-            </Nav.Link>
-            <Nav.Link href="#link">
+            </NavLink>
+            <NavLink href="#link">
               {" "}
               <Button
                 variant="outline-primary"
@@ -70,7 +76,7 @@ function Header() {
               >
                 Request Demo
               </Button>{" "}
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

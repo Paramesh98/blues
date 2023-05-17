@@ -1,3 +1,8 @@
 .nav-container a:hover {
-    color: #00ACFF;
-  }
+  color: #00acff;
+}
+
+.active {
+  color: #00acff !important;
+  font-weight: bold;
+}

@@ -10,3 +10,8 @@
 
   background: #181110;
 }
+
+a {
+  text-decoration: none !important;
+  color: #526a7e !important;
+}
