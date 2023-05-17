@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import girlImage from "../../assets/png/girlChat.png";
 import chatScreen from "../../assets/png/chatScreen.png";
@@ -31,6 +31,7 @@ import Footer from "../footer";
 import { Heading } from "../heading";
 import { Content } from "../content";
 import { CustomButton } from "../button";
+import "./chat.css";
 
 const Homepage = () => {
   const fadeFromLeftAnimation = `
@@ -84,341 +85,389 @@ const Homepage = () => {
       </div>
     );
   };
+  const [width, setWidth] = useState(1000);
+
+  useEffect(() => {
+    setWidth(window.screen.width || 1000);
+  }, [window.screen.width]);
+  const mobileHeadingFont = {
+    fontSize: "25px",
+    lineHeight: "35px",
+  };
+  const isMobile = width < 500;
   return (
     <>
       <Header />
-
-      <Container fluid>
-        <style>{fadeFromLeftAnimation}</style>
-        {/* First Div Start */}
-        <Row
-          className="h-50"
-          style={{ animation: "fade-in 0.5s ease-out forwards" }}
-        >
-          <Col md={6} style={{ paddingBottom: "70px" }} className="pt-5">
-            <Heading>BlueSecures Messaging</Heading>
-            <Content className="mr-4">
-              Enable sales, support & deskless employees on BlueSecures to
-              engage with customers on{" "}
-              <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
-                WhatsApp.
-              </span>
-            </Content>
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Image style={{ width: "75%" }} src={girlImage} fluid />
-            </div>
-            <div className="mt-5">
-              <Content>Secure Customer & Company Business Data</Content>
-            </div>
-            <div
-              style={{ display: "flex", justifyContent: "center" }}
-              className="mt-3"
-            >
-              <CustomButton>Know More</CustomButton>
-            </div>
-          </Col>
-          {/* second column */}
-          <Col
-            md={6}
-            className="text-center pt-5"
-            style={{ backgroundColor: "#F9F9F9", paddingBottom: "70px" }}
+      <div className="home-container">
+        <Container className="home-page" fluid>
+          <style>{fadeFromLeftAnimation}</style>
+          {/* First Div Start */}
+          <Row
+            className="h-50"
+            style={{ animation: "fade-in 0.5s ease-out forwards" }}
           >
-            <Heading>BlueSecures Messaging</Heading>
-            <Content>
-              AI driven marketing platform to engage with customers on{" "}
-              <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
-            </Content>
-            <Image src={chatScreen} fluid />
-            <div className="mt-5">
-              <Content>
-                Campaigns, Notifications, Payment Links & Chatbots
-              </Content>
-            </div>
-            <div
-              style={{ display: "flex", justifyContent: "center" }}
-              className="mt-3"
-            >
-              <CustomButton>Know More</CustomButton>
-            </div>
-          </Col>
-        </Row>
-        {/* First Div End */}
-
-        {/* Second Div Start */}
-        <Row style={{ marginTop: "140px" }}>
-          <Col md={6}>
-            <p
-              className="mr-4"
-              style={{ fontFamily: "Helvetica Neue", fontSize: "2.5rem" }}
-            ></p>
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Image style={{ width: "68%" }} src={Bluechat} fluid />
-            </div>
-          </Col>
-          <Col style={{ paddingLeft: "60px" }} md={6} className="mt-4">
-            <Heading style={{ textAlign: "left" }}>
-              BlueSecures Messaging
-            </Heading>
-            <b>
-              <Content
-                style={{
-                  width: "100%",
-                  textAlign: "left",
-                  margin: "0",
-                  fontSize: "25px",
-                  marginTop: "30px",
-                }}
-              >
-                Two way communication between <br />
-                <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
-                  BlueSecures{" "}
-                </span>
-                &
+            <Col md={6} style={{ paddingBottom: "70px" }} className="pt-5">
+              <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+                BlueSecures Messaging
+              </Heading>
+              <Content className="mr-4">
+                Enable sales, support & deskless employees on BlueSecures to
+                engage with customers on{" "}
                 <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
-                  {" "}
                   WhatsApp.
                 </span>
               </Content>
-            </b>
-            <div
-              className="mt-5"
-              style={{ display: "flex", alignItems: "center" }}
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Image style={{ width: "75%" }} src={girlImage} fluid />
+              </div>
+              <div className="mt-5">
+                <Content>Secure Customer & Company Business Data</Content>
+              </div>
+              <div
+                style={{ display: "flex", justifyContent: "center" }}
+                className="mt-3"
+              >
+                <CustomButton>Know More</CustomButton>
+              </div>
+            </Col>
+            {/* second column */}
+            <Col
+              md={6}
+              className="text-center pt-5"
+              style={{ backgroundColor: "#F9F9F9", paddingBottom: "70px" }}
             >
-              <Image src={Icon1} style={{ width: 30, height: 30 }} />
-              <p className="m-3">
-                <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
-                  BlueSecures{" "}
-                </span>
-                <span style={{ color: "#526A7E" }}> API Platform</span>
-              </p>
-            </div>
+              <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+                BlueSecures Messaging
+              </Heading>
+              <Content>
+                AI driven marketing platform to engage with customers on{" "}
+                <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
+              </Content>
+              <Image src={chatScreen} fluid />
+              <div className="mt-5">
+                <Content>
+                  Campaigns, Notifications, Payment Links & Chatbots
+                </Content>
+              </div>
+              <div
+                style={{ display: "flex", justifyContent: "center" }}
+                className="mt-3"
+              >
+                <CustomButton>Know More</CustomButton>
+              </div>
+            </Col>
+          </Row>
+          {/* First Div End */}
 
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <Image src={Icon3} style={{ width: 30, height: 30 }} />
-              <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
-                <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                  WhatsApp
-                </span>
-                <span style={{ color: "#526A7E" }}> Business API</span>
-              </p>
-            </div>
+          {/* Second Div Start */}
+          <Row style={{ marginTop: "140px" }}>
+            <Col md={6}>
+              <p
+                className="mr-4"
+                style={{ fontFamily: "Helvetica Neue", fontSize: "2.5rem" }}
+              ></p>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Image style={{ width: "68%" }} src={Bluechat} fluid />
+              </div>
+            </Col>
+            <Col style={{ paddingLeft: "60px" }} md={6} className="mt-4">
+              <Heading
+                style={{
+                  textAlign: "left",
+                  ...(isMobile && mobileHeadingFont),
+                }}
+              >
+                BlueSecures Messaging
+              </Heading>
+              <b>
+                <Content
+                  style={{
+                    width: "100%",
+                    textAlign: "left",
+                    margin: "0",
+                    fontSize: "25px",
+                    marginTop: "30px",
+                  }}
+                >
+                  Two way communication between <br />
+                  <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
+                    BlueSecures{" "}
+                  </span>
+                  &
+                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                    {" "}
+                    WhatsApp.
+                  </span>
+                </Content>
+              </b>
+              <div
+                className="mt-5"
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <Image src={Icon1} style={{ width: 30, height: 30 }} />
+                <p className="m-3">
+                  <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
+                    BlueSecures{" "}
+                  </span>
+                  <span style={{ color: "#526A7E" }}> API Platform</span>
+                </p>
+              </div>
 
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <Image src={Icon2} style={{ width: 30, height: 30 }} />
-              <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
-                <span style={{ color: "#526A7E" }}>
-                  Users on Blue and customers on{" "}
-                </span>
-                <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                  WhatsApp
-                </span>
-              </p>
-            </div>
-          </Col>
-        </Row>
-        {/* Second Div End */}
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Image src={Icon3} style={{ width: 30, height: 30 }} />
+                <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
+                  <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                    WhatsApp
+                  </span>
+                  <span style={{ color: "#526A7E" }}> Business API</span>
+                </p>
+              </div>
 
-        <Row style={{ marginTop: "140px" }}>
-          <Col md={12}>
-            <Container>
-              <Row>
-                <Col md={6}>
-                  <Heading style={{ textAlign: "left" }}>
-                    BlueSecures AI
-                  </Heading>
-                  <b>
-                    <Content
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Image src={Icon2} style={{ width: 30, height: 30 }} />
+                <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
+                  <span style={{ color: "#526A7E" }}>
+                    Users on Blue and customers on{" "}
+                  </span>
+                  <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                    WhatsApp
+                  </span>
+                </p>
+              </div>
+            </Col>
+          </Row>
+          {/* Second Div End */}
+
+          <Row style={{ marginTop: "140px" }}>
+            <Col md={12}>
+              <Container>
+                <Row>
+                  <Col md={6}>
+                    <Heading
                       style={{
-                        width: "100%",
                         textAlign: "left",
-                        margin: "0",
-                        fontSize: "25px",
-                        marginTop: "30px",
+                        ...(isMobile && mobileHeadingFont),
                       }}
                     >
-                      Send promotional messages to millions of users on
-                      <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
-                        {" "}
-                        WhatsApp.
-                      </span>
-                    </Content>
-                  </b>
+                      BlueSecures AI
+                    </Heading>
+                    <b>
+                      <Content
+                        style={{
+                          width: "100%",
+                          textAlign: "left",
+                          margin: "0",
+                          fontSize: "25px",
+                          marginTop: "30px",
+                        }}
+                      >
+                        Send promotional messages to millions of users on
+                        <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                          {" "}
+                          WhatsApp.
+                        </span>
+                      </Content>
+                    </b>
 
-                  <div
-                    className="mt-4"
-                    style={{ display: "flex", alignItems: "center" }}
+                    <div
+                      className="mt-4"
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
+                      <Image src={Icon1} style={{ width: 30, height: 30 }} />
+                      <p
+                        className="m-3"
+                        style={{ fontFamily: "Helvetica Neue" }}
+                      >
+                        {" "}
+                        <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
+                          BlueSecures API Platform{" "}
+                        </span>{" "}
+                        <span style={{ color: "#526A7E" }}>
+                          {" "}
+                          ( end to end encrypted )
+                        </span>
+                      </p>
+                    </div>
+
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <Image src={Icon3} style={{ width: 30, height: 30 }} />
+                      <p
+                        className="m-3"
+                        style={{ fontFamily: "Helvetica Neue" }}
+                      >
+                        {" "}
+                        <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                          WhatsApp
+                        </span>{" "}
+                        <span style={{ color: "#526A7E" }}> Business API</span>
+                      </p>
+                    </div>
+
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <Image src={Icon2} style={{ width: 30, height: 30 }} />
+                      <p
+                        className="m-3"
+                        style={{ fontFamily: "Helvetica Neue" }}
+                      >
+                        {" "}
+                        <span style={{ color: "#526A7E" }}> Chatbot on </span>
+                        <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                          WhatsApp
+                        </span>
+                      </p>
+                    </div>
+
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <Image src={Icon4} style={{ width: 30, height: 30 }} />
+                      <p
+                        className="m-3"
+                        style={{ fontFamily: "Helvetica Neue" }}
+                      >
+                        {" "}
+                        <span style={{ color: "#526A7E" }}>
+                          {" "}
+                          Engage with millions of users on{" "}
+                        </span>
+                        <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                          WhatsApp
+                        </span>
+                      </p>
+                    </div>
+                  </Col>
+                  <Col md={6} className="text-center">
+                    <Image src={Desktop} fluid />
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+          <Row style={{ marginTop: "140px" }}>
+            <Col md={12} className="text-center">
+              <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+                Functions of{" "}
+                <span style={{ color: "#00ACFF" }}>BlueSecures</span> API
+                platform
+              </Heading>
+            </Col>
+          </Row>
+
+          <Row className="functioning mt-4">
+            <Col md={2}></Col>
+            <Col md={8}>
+              <Container>
+                <Row className="m-4">
+                  <Col md={6} className="text-center mt-2">
+                    <div
+                      className="pl-4"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        backgroundColor: "#F9F9F9",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      <Image src={Icon11} style={{ width: 30, height: 30 }} />
+                      <p className="m-4">
+                        {" "}
+                        Intelligent 2 way routing between{" "}
+                        <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
+                          Blue
+                        </span>{" "}
+                        and{" "}
+                        <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                          WA
+                        </span>
+                      </p>
+                    </div>
+                  </Col>
+                  <Col
+                    md={6}
+                    sm={4}
+                    className="text-center mt-2 box-item-home12"
                   >
-                    <Image src={Icon1} style={{ width: 30, height: 30 }} />
-                    <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
-                      {" "}
-                      <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
-                        BlueSecures API Platform{" "}
-                      </span>{" "}
-                      <span style={{ color: "#526A7E" }}>
-                        {" "}
-                        ( end to end encrypted )
-                      </span>
-                    </p>
-                  </div>
+                    <ImageDiv
+                      ImageName={Icon14}
+                      Description="Business can save, secure and own their data"
+                    />
+                  </Col>
+                </Row>
+                <Row className="m-4">
+                  <Col md={6} className="text-center mt-2 box-item-home12">
+                    <ImageDiv
+                      ImageName={Icon12}
+                      Description="Track messages both ways"
+                    />
+                  </Col>
 
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <Image src={Icon3} style={{ width: 30, height: 30 }} />
-                    <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
-                      {" "}
-                      <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                        WhatsApp
-                      </span>{" "}
-                      <span style={{ color: "#526A7E" }}> Business API</span>
-                    </p>
-                  </div>
+                  <Col md={6} className="text-center mt-2 box-item-home12">
+                    <ImageDiv
+                      ImageName={Icon15}
+                      Description="Maintain Chat history"
+                    />
+                  </Col>
+                </Row>
+                <Row className="m-4">
+                  <Col md={6} className="text-center mt-2 box-item-home12">
+                    <ImageDiv
+                      ImageName={Icon13}
+                      Description="User & rights management"
+                    />
+                  </Col>
+                  <Col md={6} className="text-center mt-2 box-item-home12">
+                    <ImageDiv
+                      ImageName={Icon16}
+                      Description="End to end data encryption"
+                    />
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+            <Col md={2}></Col>
+          </Row>
+        </Container>
 
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <Image src={Icon2} style={{ width: 30, height: 30 }} />
-                    <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
-                      {" "}
-                      <span style={{ color: "#526A7E" }}> Chatbot on </span>
-                      <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                        WhatsApp
-                      </span>
-                    </p>
-                  </div>
-
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <Image src={Icon4} style={{ width: 30, height: 30 }} />
-                    <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
-                      {" "}
-                      <span style={{ color: "#526A7E" }}>
-                        {" "}
-                        Engage with millions of users on{" "}
-                      </span>
-                      <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                        WhatsApp
-                      </span>
-                    </p>
-                  </div>
-                </Col>
-                <Col md={6} className="text-center">
-                  <Image src={Desktop} fluid />
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-        </Row>
-        <Row style={{ marginTop: "140px" }}>
-          <Col md={12} className="text-center">
-            <Heading>
-              Functions of <span style={{ color: "#00ACFF" }}>BlueSecures</span>{" "}
-              API platform
+        <Row
+          className="mt-4"
+          style={{
+            backgroundColor: "#F9F9F9",
+            paddingTop: "50px",
+            paddingBottom: "80px",
+          }}
+        >
+          <Col md={12} className="text-center mt-2">
+            <Heading
+              style={{
+                marginBottom: "50px",
+                ...(isMobile && mobileHeadingFont),
+              }}
+            >
+              Customer Engagement
             </Heading>
           </Col>
-        </Row>
-
-        <Row className="functioning mt-4">
-          <Col md={2}></Col>
-          <Col md={8}>
+          <Col md={12} className="text-center mt-2">
             <Container>
-              <Row className="m-4">
-                <Col md={6} className="text-center mt-2">
-                  <div
-                    className="pl-4"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      backgroundColor: "#F9F9F9",
-                      borderRadius: "10px",
-                    }}
-                  >
-                    <Image src={Icon11} style={{ width: 30, height: 30 }} />
-                    <p className="m-4">
-                      {" "}
-                      Intelligent 2 way routing between{" "}
-                      <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
-                        Blue
-                      </span>{" "}
-                      and{" "}
-                      <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                        WA
-                      </span>
-                    </p>
-                  </div>
-                </Col>
-                <Col md={6} sm={4} className="text-center mt-2">
-                  <ImageDiv
-                    ImageName={Icon14}
-                    Description="Business can save, secure and own their data"
-                  />
-                </Col>
-              </Row>
-              <Row className="m-4">
-                <Col md={6} className="text-center mt-2">
-                  <ImageDiv
-                    ImageName={Icon12}
-                    Description="Track messages both ways"
-                  />
-                </Col>
-                <Col md={6} className="text-center mt-2">
-                  <ImageDiv
-                    ImageName={Icon15}
-                    Description="Maintain Chat history"
-                  />
-                </Col>
-              </Row>
-              <Row className="m-4">
-                <Col md={6} className="text-center mt-2">
-                  <ImageDiv
-                    ImageName={Icon13}
-                    Description="User & rights management"
-                  />
-                </Col>
-                <Col md={6} className="text-center mt-2">
-                  <ImageDiv
-                    ImageName={Icon16}
-                    Description="End to end data encryption"
-                  />
-                </Col>
+              <Row>
+                {logoName.map((l) => {
+                  return <Logos ImageName={l} />;
+                })}
               </Row>
             </Container>
           </Col>
-          <Col md={2}></Col>
         </Row>
-      </Container>
-
-      <Row
-        className="mt-4"
-        style={{
-          backgroundColor: "#F9F9F9",
-          paddingTop: "50px",
-          paddingBottom: "80px",
-        }}
-      >
-        <Col md={12} className="text-center mt-2">
-          <Heading style={{ marginBottom: "50px" }}>
-            Customer Engagement
-          </Heading>
-        </Col>
-        <Col md={12} className="text-center mt-2">
-          <Container>
-            <Row>
-              {logoName.map((l) => {
-                return <Logos ImageName={l} />;
-              })}
-            </Row>
-          </Container>
-        </Col>
-      </Row>
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 };

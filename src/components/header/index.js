@@ -16,7 +16,10 @@ function Header() {
       style={{
         background: "#fff",
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.05)",
-        zIndex: 9,
+        zIndex: 9999,
+        position: "fixed",
+        width: "100%",
+        top: 0,
       }}
       expand="lg"
     >
