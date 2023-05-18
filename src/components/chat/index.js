@@ -44,6 +44,7 @@ import user_setting from "../../assets/images/homepage/user-setting.svg";
 import ChatHistory from "../../assets/images/homepage/ChatHistory.svg";
 import E2E from "../../assets/images/homepage/end-to-end.svg";
 import ScrollAnimation from "react-animate-on-scroll";
+import { Link } from "react-router-dom";
 
 export const logoName = [
   ComLogo7,
@@ -166,7 +167,11 @@ const Homepage = () => {
                   style={{ display: "flex", justifyContent: "center" }}
                   className="mt-3"
                 >
-                  <CustomButton>Know More</CustomButton>
+                  <CustomButton>
+                    <Link style={{ color: "white" }} to="/about">
+                      Know More
+                    </Link>
+                  </CustomButton>
                 </div>
               </ScrollAnimation>
             </Col>
@@ -187,7 +192,14 @@ const Homepage = () => {
                   AI driven marketing platform to engage with customers on{" "}
                   <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
                 </Content>
-                <Image src={chatww} style={{ maxHeight: "37vw" }} fluid />
+                <Image
+                  src={chatww}
+                  style={{
+                    maxHeight: "37vw",
+                    ...(isMobile && { width: "90%", maxHeight: "100vh" }),
+                  }}
+                  fluid
+                />
                 <div className="mt-5">
                   <Content>
                     Campaigns, Notifications, Payment Links & Chatbots
@@ -197,7 +209,11 @@ const Homepage = () => {
                   style={{ display: "flex", justifyContent: "center" }}
                   className="mt-3"
                 >
-                  <CustomButton>Know More</CustomButton>
+                  <CustomButton>
+                    <Link style={{ color: "white" }} to="/contact">
+                      Know More
+                    </Link>
+                  </CustomButton>
                 </div>
               </ScrollAnimation>
             </Col>
