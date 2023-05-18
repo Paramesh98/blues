@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
-import girlImage from "../../assets/png/girlChat.png";
 import chatScreen from "../../assets/png/chatScreen.png";
 import Bluechat from "../../assets/png/bluechat.png";
 import BoyChat from "../../assets/png/BoyChat.png";
@@ -25,6 +24,24 @@ import { Heading } from "../heading";
 import { Content } from "../content";
 import "./home.css";
 
+import girlImage from "../../assets/images/homepage/hero1.jpg";
+import section2 from "../../assets/images/page1/2-section.png";
+import section3 from "../../assets/images/page1/3-section.png";
+import section5 from "../../assets/images/page1/5-section.png";
+import boradcast from "../../assets/images/page1/broadcast.svg";
+import bblue from "../../assets/images/page1/bblue.svg";
+import certification from "../../assets/images/page1/certifications.svg";
+import cloudstorage from "../../assets/images/page1/cloud-storage.svg";
+import copy from "../../assets/images/page1/copy.svg";
+import download from "../../assets/images/page1/download.svg";
+import integrations from "../../assets/images/page1/integrations.svg";
+import plus from "../../assets/images/page1/plusicon.svg";
+import salesperson from "../../assets/images/page1/sales-person.svg";
+import screenshot from "../../assets/images/page1/screenshot.svg";
+import shareIcon from "../../assets/images/page1/share.svg";
+import wag from "../../assets/images/page1/wa-group.svg";
+import wa from "../../assets/images/page1/whatsapp.svg";
+
 const Home = () => {
   const [width, setWidth] = useState(1000);
 
@@ -43,15 +60,6 @@ const Home = () => {
     }
   }
 `;
-  // const logoNameBlack =[ComLogo1,ComLogo2,ComLogo3,ComLogo4,ComLogo5,ComLogo6]
-  // const logoName = [ComLogo7,ComLogo8,ComLogo9,ComLogo10,ComLogo11,ComLogo12]
-  const Logos = ({ ImageName }) => {
-    return (
-      <Col md={2}>
-        <Image src={ImageName} />
-      </Col>
-    );
-  };
 
   const ImageDiv = ({ ImageName, Description }) => {
     return (
@@ -62,7 +70,7 @@ const Home = () => {
           borderRadius: "10px",
         }}
       >
-        <Image src={ImageName} style={{ width: 40, height: 40 }} />
+        <Image src={ImageName} style={{ width: 40 }} />
         <p className="m-4"> {Description}</p>
       </div>
     );
@@ -80,7 +88,7 @@ const Home = () => {
         <style>{fadeFromLeftAnimation}</style>
         {/* First Div Start */}
         <Row
-          className="align-items-center"
+          className="align-items-center reverse-row2"
           style={{
             animation: "fade-in 0.5s ease-out forwards",
             ...(isMobile && { padding: "30px" }),
@@ -89,7 +97,13 @@ const Home = () => {
           <Col md={6} className="text-center">
             <Image src={girlImage} fluid />
           </Col>
-          <Col md={6}>
+          <Col
+            md={6}
+            style={{
+              paddingLeft: "100px",
+              ...(isMobile && { paddingLeft: "0" }),
+            }}
+          >
             <Heading
               style={{
                 textAlign: "left",
@@ -124,15 +138,25 @@ const Home = () => {
 
         {/* Second Div Start */}
         <Row
+          className="reverse-row1"
           style={{
             marginTop: "140px",
-            ...(isMobile && { marginTop: "30px", padding: "30px" }),
+            ...(isMobile && {
+              marginTop: "0px",
+              padding: "30px",
+              paddingTop: "0px",
+            }),
           }}
         >
           <Col md={6}>
             <p
               className="mr-4"
-              style={{ fontFamily: "Helvetica Neue", fontSize: "15px" }}
+              style={{
+                fontFamily: "Helvetica Neue",
+                fontSize: "15px",
+                marginTop: "100px",
+                ...(isMobile && { marginTop: "30px" }),
+              }}
             >
               Your company is losing customers, revenues & critical business
               data viz.,
@@ -167,7 +191,7 @@ const Home = () => {
           </Col>
 
           <Col md={6} className="text-center">
-            <Image src={BoyChat} fluid />
+            <Image src={section2} fluid />
           </Col>
         </Row>
         {/* Second Div End */}
@@ -176,12 +200,16 @@ const Home = () => {
         <Row
           style={{
             marginTop: "140px",
-            ...(isMobile && { marginTop: "30px", padding: "30px" }),
+            ...(isMobile && {
+              marginTop: "0px",
+              padding: "30px",
+              paddingTop: "0px",
+            }),
           }}
           className=" align-items-center"
         >
           <Col md={6} className="text-center">
-            <Image src={blueChatScreen} fluid />
+            <Image src={section3} fluid />
           </Col>
           <Col md={6}>
             <Content
@@ -192,6 +220,9 @@ const Home = () => {
                 margin: "0",
                 textAlign: "left",
                 marginBottom: "10px",
+                ...(isMobile && {
+                  marginTop: "50px",
+                }),
               }}
             >
               {" "}
@@ -244,6 +275,9 @@ const Home = () => {
           backgroundColor: "#F9F9F9",
           marginTop: "140px",
           paddingBottom: "40px",
+          ...(isMobile && {
+            marginTop: "20px",
+          }),
         }}
       >
         <Col md={12} className="text-center mt-4">
@@ -261,21 +295,17 @@ const Home = () => {
         <Col md={12} className="text-center m-4">
           <Row className="justify-content-center">
             <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
-              <div>
-                <Image
-                  src={group}
-                  className="mt-4"
-                  style={{ width: 40, height: 40 }}
-                />
+              <div className="p-4">
+                <Image src={wag} className="mt-4 mb-2" style={{ width: 40 }} />
                 <p>Add WhatsApp users to groups in BlueSecures</p>
               </div>
             </Col>
             <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
-              <div>
+              <div className="p-4">
                 <Image
-                  src={network}
-                  className="mt-4"
-                  style={{ width: 40, height: 40 }}
+                  src={boradcast}
+                  className="mt-4 mb-2"
+                  style={{ width: 40 }}
                 />
                 <p>
                   Broadcast marketing collateral to customers who are on{" "}
@@ -287,11 +317,11 @@ const Home = () => {
               </div>
             </Col>
             <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
-              <div>
+              <div className="p-4">
                 <Image
                   src={share}
-                  className="mt-4"
-                  style={{ width: 40, height: 40 }}
+                  className="mt-4 mb-2"
+                  style={{ width: 40 }}
                 />
                 <p>
                   Assign chat history to new sales person when existing one
@@ -305,11 +335,27 @@ const Home = () => {
       {/* Forth Div End */}
 
       {/* Fifth Div Start */}
-      <Row style={{ marginTop: "140px" }} className="align-items-center">
+      <Row
+        style={{
+          marginTop: "140px",
+          ...(isMobile && {
+            marginTop: "0px",
+          }),
+        }}
+        className="align-items-center"
+      >
         <Col md={12}>
           <Container>
-            <Row>
-              <Col md={6}>
+            <Row className="reverse-row1">
+              <Col
+                style={{
+                  marginTop: "100px",
+                  ...(isMobile && {
+                    marginTop: "40px",
+                  }),
+                }}
+                md={6}
+              >
                 <Heading
                   style={{
                     textAlign: "left",
@@ -349,13 +395,21 @@ const Home = () => {
                   into employee communication process
                 </p>
                 <ImageDiv
-                  ImageName={network2}
+                  ImageName={bblue}
                   Description="Broadcast, Events | Birthdays | Policies | Update etc."
                 />
               </Col>
 
               <Col md={6} className="text-center">
-                <Image src={Boy2Chat} fluid />
+                <Image
+                  src={section5}
+                  fluid
+                  style={{
+                    ...(isMobile && {
+                      marginTop: "40px",
+                    }),
+                  }}
+                />
               </Col>
             </Row>
           </Container>
@@ -364,7 +418,7 @@ const Home = () => {
       {/* Fifth Div End */}
 
       <Row
-        style={{ marginTop: "70px" }}
+        style={{ marginTop: "70px", ...(isMobile && { marginTop: "30px" }) }}
         className="align-items-center box-icons"
       >
         <Col md={12} className="text-center mt-4">
@@ -376,11 +430,7 @@ const Home = () => {
           <Row className="justify-content-center">
             <Col className="m-4" md={2} style={{ backgroundColor: "white" }}>
               <div>
-                <Image
-                  src={adminIcon1}
-                  className="mt-4"
-                  style={{ width: 40, height: 40 }}
-                />
+                <Image src={plus} className="mt-4" style={{ width: 40 }} />
                 <p style={{ color: "#526A7E" }}>Add User</p>
               </div>
             </Col>
@@ -391,24 +441,17 @@ const Home = () => {
                 backgroundColor: "white",
                 borderLeft: "1px solid #000000",
                 borderRight: "1px solid #000000",
+                ...(isMobile && { border: "none" }),
               }}
             >
               <div>
-                <Image
-                  src={adminIcon2}
-                  className="mt-4"
-                  style={{ width: 40, height: 40 }}
-                />
+                <Image src={download} className="mt-4" style={{ width: 40 }} />
                 <p style={{ color: "#526A7E" }}>Download data to mobile</p>
               </div>
             </Col>
             <Col className="m-4" md={2} style={{ backgroundColor: "white" }}>
               <div>
-                <Image
-                  src={adminIcon3}
-                  className="mt-4"
-                  style={{ width: 40, height: 40 }}
-                />
+                <Image src={copy} className="mt-4" style={{ width: 40 }} />
                 <p style={{ color: "#526A7E" }}>Cut & Paste</p>
               </div>
             </Col>
@@ -418,11 +461,7 @@ const Home = () => {
           <Row className="justify-content-center">
             <Col className="m-4" md={2} style={{ backgroundColor: "white" }}>
               <div>
-                <Image
-                  src={adminIcon4}
-                  className="mt-4"
-                  style={{ width: 40, height: 40 }}
-                />
+                <Image src={shareIcon} className="mt-4" style={{ width: 40 }} />
                 <p style={{ color: "#526A7E" }}>Share Externally</p>
               </div>
             </Col>
@@ -433,14 +472,11 @@ const Home = () => {
                 backgroundColor: "white",
                 borderLeft: "1px solid #000000",
                 borderRight: "1px solid #000000",
+                ...(isMobile && { border: "none" }),
               }}
             >
               <div>
-                <Image
-                  src={adminIcon5}
-                  className="mt-4"
-                  style={{ width: 40, height: 40 }}
-                />
+                <Image src={wa} className="mt-4" style={{ width: 40 }} />
                 <p style={{ color: "#526A7E" }}>
                   Send to{" "}
                   <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
@@ -452,9 +488,9 @@ const Home = () => {
             <Col className="m-4" md={2} style={{ backgroundColor: "white" }}>
               <div>
                 <Image
-                  src={adminIcon6}
+                  src={screenshot}
                   className="mt-4"
-                  style={{ width: 40, height: 40 }}
+                  style={{ width: 40 }}
                 />
                 <p style={{ color: "#526A7E" }}>Disable Screenshot</p>
               </div>
@@ -483,9 +519,9 @@ const Home = () => {
             <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
               <div>
                 <Image
-                  src={Integration}
+                  src={integrations}
                   className="mt-4"
-                  style={{ width: 70, height: 70 }}
+                  style={{ width: 70 }}
                 />
                 <p
                   className="m-4"
@@ -502,9 +538,9 @@ const Home = () => {
             <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
               <div>
                 <Image
-                  src={Data}
+                  src={cloudstorage}
                   className="mt-4"
-                  style={{ width: 70, height: 70 }}
+                  style={{ width: 70 }}
                 />
                 <p
                   className="m-4"
@@ -518,9 +554,9 @@ const Home = () => {
             <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
               <div>
                 <Image
-                  src={Certification}
+                  src={certification}
                   className="mt-4"
-                  style={{ width: 70, height: 70 }}
+                  style={{ width: 70 }}
                 />
                 <p
                   className="m-4"

@@ -9,10 +9,21 @@
 .home-div {
   width: 100%;
   overflow: hidden;
+  padding-top: 100px;
+}
+.content-page {
+  padding-top: 70px;
 }
 
 @media only screen and (max-width: 500px) {
   .content-page {
-    padding-top: 100px;
+    padding-top: 0px;
+  }
+
+  .reverse-row1 {
+    flex-direction: column-reverse;
+  }
+  .reverse-row2 {
+    flex-direction: column;
   }
 }

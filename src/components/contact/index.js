@@ -32,6 +32,14 @@ import Footer from "../footer";
 import { Heading } from "../heading";
 import { Content } from "../content";
 import { CustomButton } from "../button";
+import CustomSlider from "../slider";
+import "./style.css";
+
+import Carinsurance from "../../assets/images/page2/Carinsurance-man.png";
+import chatbot from "../../assets/images/page2/chatbot.png";
+import heroimage from "../../assets/images/page2/Hero-image-whatsapp.png";
+import payment from "../../assets/images/page2/payment.png";
+import shoppingcart from "../../assets/images/page2/shoppingcart.png";
 
 const Contact = () => {
   const [width, setWidth] = useState(1000);
@@ -87,7 +95,7 @@ const Contact = () => {
           borderRadius: "10px",
         }}
       >
-        <Image src={ImageName} style={{ width: 30, height: 30 }} />
+        <Image src={ImageName} style={{ width: 30 }} />
         <p className="m-4"> {Description}</p>
       </div>
     );
@@ -133,12 +141,15 @@ const Contact = () => {
       <Header />
       <Container>
         <style>{fadeFromLeftAnimation}</style>
-        <Row style={{ marginTop: "70px" }}>
-          <Col md={6}>
+        <Row
+          className="reverse-row1"
+          style={{ marginTop: "140px", ...(isMobile && { marginTop: "70px" }) }}
+        >
+          <Col md={6} style={{ marginTop: "30px" }}>
             <Heading
               style={{
                 textAlign: "left",
-                ...(isMobile && { ...mobileHeadingFont, marginTop: "50px" }),
+                ...(isMobile && { ...mobileHeadingFont }),
               }}
             >
               BlueSecures AI
@@ -172,7 +183,7 @@ const Contact = () => {
             >
               <Image
                 src={ContactIcon1}
-                style={{ width: 20, height: 20, marginLeft: "20px" }}
+                style={{ width: 20, marginLeft: "20px" }}
               />
               <p className="m-3"> Chatbots</p>
             </div>
@@ -180,7 +191,7 @@ const Contact = () => {
             <div style={{ display: "flex", alignItems: "center" }}>
               <Image
                 src={ContactIcon2}
-                style={{ width: 20, height: 20, marginLeft: "20px" }}
+                style={{ width: 20, marginLeft: "20px" }}
               />
               <p className="m-3"> Notifications</p>
             </div>
@@ -188,7 +199,7 @@ const Contact = () => {
             <div style={{ display: "flex", alignItems: "center" }}>
               <Image
                 src={ContactIcon3}
-                style={{ width: 20, height: 20, marginLeft: "20px" }}
+                style={{ width: 20, marginLeft: "20px" }}
               />
               <p className="m-3"> Automation</p>
             </div>
@@ -208,7 +219,7 @@ const Contact = () => {
             className="text-center"
             style={{ ...(isMobile && { marginTop: "50px" }) }}
           >
-            <Image src={ContactChat} fluid />
+            <Image src={heroimage} style={{ width: "70%" }} fluid />
           </Col>
         </Row>
       </Container>
@@ -219,24 +230,17 @@ const Contact = () => {
        *
        * */}
       <Row style={{ marginTop: "70px" }}>
-        <Col md={1}></Col>
-        <Col md={10} className="text-center mt-2">
-          <Row>
-            <div
-              style={{ overflowX: "scroll", width: "100%", display: "flex" }}
-            >
-              {logoName.map((l) => {
-                return <Logos ImageName={l} />;
-              })}
-            </div>
-          </Row>
-        </Col>
-        <Col md={1}></Col>
+        <CustomSlider />
       </Row>
 
       <Row
         className="align-items-center"
-        style={{ marginTop: "70px", background: "#F9F9F9", paddingTop: "30px" }}
+        style={{
+          marginTop: "70px",
+          background: "#F9F9F9",
+          paddingTop: "30px",
+          ...(isMobile && { width: "103%" }),
+        }}
       >
         <Col md={12} className="text-center mt-4">
           <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
@@ -246,7 +250,7 @@ const Contact = () => {
             </span>
           </Heading>
         </Col>
-        <Col md={12} className="text-center m-4">
+        <Col md={12} className="text-center m-4 margin-item">
           <Row className="justify-content-center">
             <Col className="p-4" md={3}>
               <div>
@@ -265,10 +269,11 @@ const Contact = () => {
             </Col>
             <Col
               className="p-4"
-              md={2}
+              md={3}
               style={{
                 borderLeft: "1px solid #000000",
                 borderRight: "1px solid #000000",
+                ...(isMobile && { border: "none" }),
               }}
             >
               <div>
@@ -312,8 +317,11 @@ const Contact = () => {
       */}
 
       <Row
-        style={{ marginTop: "70px", ...(isMobile && { padding: "30px" }) }}
-        className="align-items-center"
+        style={{
+          marginTop: "70px",
+          ...(isMobile && { padding: "30px", marginTop: "30px" }),
+        }}
+        className="align-items-center reverse-row2"
       >
         <Col md={6}>
           <div
@@ -322,7 +330,14 @@ const Contact = () => {
               justifyContent: "center",
             }}
           >
-            <Image src={Boy3Chat} fluid style={{ width: "70%" }} />
+            <Image
+              src={Carinsurance}
+              fluid
+              style={{
+                width: "75%",
+                ...(isMobile && { width: "90%", marginTop: "0px" }),
+              }}
+            />
           </div>
         </Col>
         <Col md={6}>
@@ -331,7 +346,7 @@ const Contact = () => {
               textAlign: "left",
               lineHeight: "64px",
               ...(isMobile && mobileHeadingFont),
-              ...(isMobile && { marginTop: "30px" }),
+              ...(isMobile && { marginTop: "50px" }),
             }}
           >
             Integrate Excel, CRM, Order Management, billing systems with{" "}
@@ -375,7 +390,7 @@ const Contact = () => {
        */}
 
       <Row
-        className="align-items-center"
+        className="align-items-center reverse-row1"
         style={{ marginTop: "140px", ...(isMobile && { marginTop: "30px" }) }}
       >
         <Col md={6}>
@@ -428,28 +443,28 @@ const Contact = () => {
 
         <Col md={6} className="text-center">
           <Image
-            src={messageScreen1}
+            src={shoppingcart}
             fluid
-            style={{ ...(isMobile && { width: "90%" }) }}
+            style={{ width: "75%", ...(isMobile && { width: "90%" }) }}
           />
         </Col>
       </Row>
 
       {/*  */}
       <Row
-        className="align-items-center"
+        className="align-items-center reverse-row2"
         style={{
           marginTop: "70px",
           paddingTop: "70px",
           paddingBottom: "70px",
           background: "#F9F9F9",
-          ...(isMobile && { padding: "30px" }),
+          ...(isMobile && { padding: "30px", marginTop: "20px" }),
         }}
       >
         <Col md={6} className="text-center">
-          <Image src={allText} fluid />
+          <Image src={payment} fluid />
         </Col>
-        <Col md={6}>
+        <Col md={6} style={{ ...(isMobile && { marginTop: "50px" }) }}>
           <Heading
             style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
           >
@@ -485,12 +500,19 @@ const Contact = () => {
       </Row>
       {/*  */}
       <Row
-        className="align-items-center"
-        style={{ marginBottom: "100px", marginTop: "70px" }}
+        className="align-items-center reverse-row1"
+        style={{
+          marginBottom: "100px",
+          marginTop: "70px",
+          ...(isMobile && { marginBottom: "0px" }),
+        }}
       >
         <Col
           md={6}
-          style={{ paddingLeft: "140px", ...(isMobile && { padding: "30px" }) }}
+          style={{
+            paddingLeft: "140px",
+            ...(isMobile && { padding: "30px", marginTop: "30px" }),
+          }}
         >
           <Heading
             style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
@@ -545,7 +567,7 @@ const Contact = () => {
         </Col>
 
         <Col md={6} className="text-center">
-          <Image src={allGroup} fluid />
+          <Image src={chatbot} fluid />
         </Col>
       </Row>
       <Footer />

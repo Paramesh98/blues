@@ -5,13 +5,6 @@ import logo from "../../assets/png/logo.png";
 import "./style.css"; // import the CSS file
 
 function Header() {
-  const handleMouseEnter = (event) => {
-    event.currentTarget.style.color = "#00ACFF";
-  };
-
-  const handleMouseLeave = (event) => {
-    event.currentTarget.style.color = "";
-  };
   return (
     <Navbar
       style={{
@@ -29,7 +22,6 @@ function Header() {
           <img
             src={logo}
             width="179"
-            height="52"
             className="d-inline-block align-top"
             alt="Logo"
           />
