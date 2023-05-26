@@ -268,11 +268,13 @@ const Contact = () => {
               </div>
             </Col>
             <Col
-              className="p-4"
+              className="m-4 marginHori"
               md={3}
               style={{
-                borderLeft: "1px solid #000000",
-                borderRight: "1px solid #000000",
+                borderLeft: "1px solid rgba(0, 0, 0, 0.2)",
+                borderRight: "1px solid rgba(0, 0, 0, 0.2)",
+                marginLeft: 0,
+                marginRight: 0,
                 ...(isMobile && { border: "none" }),
               }}
             >
@@ -555,7 +557,7 @@ const Contact = () => {
             by 10X
           </Content>
 
-          <ul>
+          <ul style={{ marginLeft: "-25px" }}>
             <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
               Chatbots for sales, support and services.
             </li>

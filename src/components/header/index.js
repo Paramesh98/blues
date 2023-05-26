@@ -36,6 +36,8 @@ function Header() {
                 textDecoration: "none",
                 padding: "8px",
                 color: "#526a7e",
+                marginLeft: "15px",
+                fontWeight: 800,
               }}
             >
               BlueWeb
@@ -46,6 +48,8 @@ function Header() {
                 textDecoration: "none",
                 padding: "8px",
                 color: "#526a7e",
+                marginLeft: "15px",
+                fontWeight: 600,
               }}
             >
               About
@@ -56,6 +60,8 @@ function Header() {
                 textDecoration: "none",
                 padding: "8px",
                 color: "#526a7e",
+                marginLeft: "15px",
+                fontWeight: 600,
               }}
             >
               Contact
@@ -64,7 +70,7 @@ function Header() {
               {" "}
               <Button
                 variant="outline-primary"
-                style={{ borderRadius: "100px" }}
+                style={{ borderRadius: "80px", marginLeft: "15px" }}
               >
                 Request Demo
               </Button>{" "}

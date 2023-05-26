@@ -219,6 +219,7 @@ const Home = () => {
                 width: "100%",
                 margin: "0",
                 textAlign: "left",
+                marginLeft: "10px",
                 marginBottom: "10px",
                 ...(isMobile && {
                   marginTop: "50px",
@@ -228,13 +229,23 @@ const Home = () => {
               {" "}
               How It Works?
             </Content>
-            <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+            <Heading
+              style={{
+                marginLeft: "-15px",
+                ...(isMobile && mobileHeadingFont),
+              }}
+            >
               <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
                 BlueSecures{" "}
               </span>{" "}
               API Platform
             </Heading>
-            <ul>
+
+            <ul
+              style={{
+                marginLeft: "-15px",
+              }}
+            >
               <li
                 style={{
                   fontFamily: "Helvetica Neue",
@@ -359,6 +370,7 @@ const Home = () => {
                 <Heading
                   style={{
                     textAlign: "left",
+                    marginBottom: "10px",
                     ...(isMobile && mobileHeadingFont),
                   }}
                 >
@@ -371,7 +383,7 @@ const Home = () => {
                     lineHeight: "25px",
                     textAlign: "left",
                     width: "100%",
-                    marginBottom: "20px",
+                    marginBottom: "10px",
                   }}
                 >
                   Use{" "}
@@ -516,7 +528,11 @@ const Home = () => {
         </Col>
         <Col md={12} className="text-center m-4">
           <Row className="justify-content-center">
-            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+            <div
+              className="m-4 box-style"
+              md={3}
+              style={{ backgroundColor: "white" }}
+            >
               <div>
                 <Image
                   src={integrations}
@@ -525,7 +541,11 @@ const Home = () => {
                 />
                 <p
                   className="m-4"
-                  style={{ color: "#183B56", fontWeight: "bold" }}
+                  style={{
+                    color: "#183B56",
+                    fontWeight: "bold",
+                    fontSize: "20px",
+                  }}
                 >
                   Integrations
                 </p>
@@ -534,8 +554,12 @@ const Home = () => {
                   etc
                 </p>
               </div>
-            </Col>
-            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+            </div>
+            <div
+              className="m-4 box-style"
+              md={3}
+              style={{ backgroundColor: "white" }}
+            >
               <div>
                 <Image
                   src={cloudstorage}
@@ -544,14 +568,22 @@ const Home = () => {
                 />
                 <p
                   className="m-4"
-                  style={{ color: "#183B56", fontWeight: "bold" }}
+                  style={{
+                    color: "#183B56",
+                    fontWeight: "bold",
+                    fontSize: "20px",
+                  }}
                 >
                   Data storage
                 </p>
                 <p>Public Cloud, Private Cloud or on-premise</p>
               </div>
-            </Col>
-            <Col className="m-4" md={3} style={{ backgroundColor: "white" }}>
+            </div>
+            <div
+              className="m-4 box-style"
+              md={3}
+              style={{ backgroundColor: "white" }}
+            >
               <div>
                 <Image
                   src={certification}
@@ -560,13 +592,17 @@ const Home = () => {
                 />
                 <p
                   className="m-4"
-                  style={{ color: "#183B56", fontWeight: "bold" }}
+                  style={{
+                    color: "#183B56",
+                    fontWeight: "bold",
+                    fontSize: "20px",
+                  }}
                 >
                   Certifications
                 </p>
                 <p>Certifications - ISO, VAPT,HIPAA, “ISO 27001”</p>
               </div>
-            </Col>
+            </div>
           </Row>
         </Col>
       </Row>

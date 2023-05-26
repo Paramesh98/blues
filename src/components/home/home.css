@@ -2,6 +2,13 @@
   color: #526a7e;
 }
 
+.box-style {
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  margin-right: 50px !important;
+}
 .box-icons p {
   margin-top: 15px;
   font-weight: 600;

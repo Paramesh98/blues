@@ -2,11 +2,16 @@
   .reverse-row1 {
     flex-direction: column-reverse;
   }
-    .reverse-row2 {
+  .reverse-row2 {
     flex-direction: column;
   }
-  
+
   .margin-item {
     margin-left: 0px !important;
   }
+}
+
+.marginHori {
+  margin-left: 0 !important ;
+  margin-left: 0 !important ;
 }

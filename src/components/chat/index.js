@@ -125,31 +125,8 @@ const Homepage = () => {
                 animateIn="bounceInRight"
                 animateOut="bounceOutLeft"
               >
-                {isMobile && (
-                  <Image
-                    style={{ width: "75%", ...(isMobile && { width: "90%" }) }}
-                    src={girlImage}
-                    fluid
-                  />
-                )}
-                <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
-                  BlueSecures Messaging
-                </Heading>
-                <Content className="mr-4">
-                  Enable sales, support & deskless employees on BlueSecures to
-                  engage with customers on{" "}
-                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
-                    WhatsApp.
-                  </span>
-                </Content>
-                <div
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  {!isMobile && (
+                <div>
+                  {isMobile && (
                     <Image
                       style={{
                         width: "75%",
@@ -159,7 +136,40 @@ const Homepage = () => {
                       fluid
                     />
                   )}
+                  <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+                    BlueSecures Messaging
+                  </Heading>
+                  <Content className="mr-4">
+                    Emoloyees using{" "}
+                    <span style={{ color: "#1AD03F" }}>WhatsApp</span> at work ?
+                    losing customers & data ? with{" "}
+                    <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
+                      BlueSecures,
+                    </span>{" "}
+                    retain & message customers on{" "}
+                    <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
+                  </Content>
+                  <div
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {!isMobile && (
+                      <Image
+                        style={{
+                          width: "55%",
+                          maxHeight: "26vw",
+                          ...(isMobile && { width: "90%" }),
+                        }}
+                        src={girlImage}
+                        fluid
+                      />
+                    )}
+                  </div>
                 </div>
+
                 <div className="mt-5">
                   <Content>Secure Customer & Company Business Data</Content>
                 </div>
@@ -168,7 +178,11 @@ const Homepage = () => {
                   className="mt-3"
                 >
                   <CustomButton>
-                    <Link style={{ color: "white" }} to="/about">
+                    <Link
+                      className="button-link"
+                      style={{ color: "white" }}
+                      to="/about"
+                    >
                       Know More
                     </Link>
                   </CustomButton>
@@ -195,8 +209,8 @@ const Homepage = () => {
                 <Image
                   src={chatww}
                   style={{
-                    maxHeight: "37vw",
-                    ...(isMobile && { width: "90%", maxHeight: "100vh" }),
+                    maxHeight: "26vw",
+                    ...(isMobile && { width: "60%", maxHeight: "100vh" }),
                   }}
                   fluid
                 />
@@ -210,7 +224,11 @@ const Homepage = () => {
                   className="mt-3"
                 >
                   <CustomButton>
-                    <Link style={{ color: "white" }} to="/contact">
+                    <Link
+                      className="button-link"
+                      style={{ color: "white" }}
+                      to="/contact"
+                    >
                       Know More
                     </Link>
                   </CustomButton>
@@ -259,6 +277,7 @@ const Homepage = () => {
                 <Heading
                   style={{
                     textAlign: "left",
+                    marginTop: "60px",
                     ...(isMobile && mobileHeadingFont),
                   }}
                 >
