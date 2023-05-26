@@ -107,7 +107,7 @@ const Footer = ({ isMobile }) => {
       <Row className="ft-bottom-banner ">
         <Col xs={12} md={6} className="text-center text-md-left">
           <span className="mb-0 ml-5 footer-l" style={{ color: "#FFFFFF" }}>
-            &copy; 2023 © Deskfactors Inc. All Rights Reserved.
+            2023 © Deskfactors Inc. All Rights Reserved.
           </span>
         </Col>
         <Col xs={12} md={6} className="text-center dark text-md-right">

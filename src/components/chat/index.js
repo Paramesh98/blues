@@ -181,7 +181,7 @@ const Homepage = () => {
                     <Link
                       className="button-link"
                       style={{ color: "white" }}
-                      to="/about"
+                      to="/"
                     >
                       Know More
                     </Link>
