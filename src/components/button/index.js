@@ -25,7 +25,6 @@ export const CustomButton = ({ children }) => {
           color: "#FFFFFF",
         }}
       >
-        {" "}
         {children}
       </span>
     </button>

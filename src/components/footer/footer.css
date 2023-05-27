@@ -10,3 +10,17 @@
 
   background: #181110;
 }
+
+a {
+  text-decoration: none !important;
+  color: #526a7e !important;
+}
+
+@media only screen and (max-width: 500px) {
+  .footer-l {
+    margin-left: 0 !important;
+  }
+  .footer-r {
+    margin-right: 0 !important;
+  }
+}

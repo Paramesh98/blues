@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/png/logo.png";
 import "./style.css"; // import the CSS file
 
 function Header() {
-  const handleMouseEnter = (event) => {
-    event.currentTarget.style.color = "#00ACFF";
-  };
-
-  const handleMouseLeave = (event) => {
-    event.currentTarget.style.color = "";
-  };
   return (
     <Navbar
       style={{
@@ -24,11 +18,10 @@ function Header() {
       expand="lg"
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             src={logo}
             width="179"
-            height="52"
             className="d-inline-block align-top"
             alt="Logo"
           />
@@ -36,41 +29,52 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto nav-container">
-            <Nav.Link
-              className="mt-1"
-              href="/"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+            <NavLink
+              activeClassName="active"
+              to="/"
+              style={{
+                textDecoration: "none",
+                padding: "8px",
+                color: "#526a7e",
+                marginLeft: "15px",
+                fontWeight: 800,
+              }}
             >
-              <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
-                BlueWeb
-              </span>
-            </Nav.Link>
-            <Nav.Link
-              className="mt-1"
-              href="/about"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              BlueWeb
+            </NavLink>
+            <NavLink
+              to="/about"
+              style={{
+                textDecoration: "none",
+                padding: "8px",
+                color: "#526a7e",
+                marginLeft: "15px",
+                fontWeight: 600,
+              }}
             >
               About
-            </Nav.Link>
-            <Nav.Link
-              className="mt-1"
-              href="/contact"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+            </NavLink>
+            <NavLink
+              to="/contact"
+              style={{
+                textDecoration: "none",
+                padding: "8px",
+                color: "#526a7e",
+                marginLeft: "15px",
+                fontWeight: 600,
+              }}
             >
               Contact
-            </Nav.Link>
-            <Nav.Link href="#link">
+            </NavLink>
+            <NavLink href="#link">
               {" "}
               <Button
                 variant="outline-primary"
-                style={{ borderRadius: "100px" }}
+                style={{ borderRadius: "80px", marginLeft: "15px" }}
               >
                 Request Demo
               </Button>{" "}
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

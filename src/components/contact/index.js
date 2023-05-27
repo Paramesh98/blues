@@ -32,6 +32,14 @@ import Footer from "../footer";
 import { Heading } from "../heading";
 import { Content } from "../content";
 import { CustomButton } from "../button";
+import CustomSlider from "../slider";
+import "./style.css";
+
+import Carinsurance from "../../assets/images/page2/Carinsurance-man.png";
+import chatbot from "../../assets/images/page2/chatbot.png";
+import heroimage from "../../assets/images/page2/Hero-image-whatsapp.png";
+import payment from "../../assets/images/page2/payment.png";
+import shoppingcart from "../../assets/images/page2/shoppingcart.png";
 
 const Contact = () => {
   const [width, setWidth] = useState(1000);
@@ -87,7 +95,7 @@ const Contact = () => {
           borderRadius: "10px",
         }}
       >
-        <Image src={ImageName} style={{ width: 30, height: 30 }} />
+        <Image src={ImageName} style={{ width: 30 }} />
         <p className="m-4"> {Description}</p>
       </div>
     );
@@ -133,12 +141,15 @@ const Contact = () => {
       <Header />
       <Container>
         <style>{fadeFromLeftAnimation}</style>
-        <Row style={{ marginTop: "70px" }}>
-          <Col md={6}>
+        <Row
+          className="reverse-row1"
+          style={{ marginTop: "140px", ...(isMobile && { marginTop: "70px" }) }}
+        >
+          <Col md={6} style={{ marginTop: "30px" }}>
             <Heading
               style={{
                 textAlign: "left",
-                ...(isMobile && { ...mobileHeadingFont, marginTop: "50px" }),
+                ...(isMobile && { ...mobileHeadingFont }),
               }}
             >
               BlueSecures AI
@@ -172,7 +183,7 @@ const Contact = () => {
             >
               <Image
                 src={ContactIcon1}
-                style={{ width: 20, height: 20, marginLeft: "20px" }}
+                style={{ width: 20, marginLeft: "20px" }}
               />
               <p className="m-3"> Chatbots</p>
             </div>
@@ -180,7 +191,7 @@ const Contact = () => {
             <div style={{ display: "flex", alignItems: "center" }}>
               <Image
                 src={ContactIcon2}
-                style={{ width: 20, height: 20, marginLeft: "20px" }}
+                style={{ width: 20, marginLeft: "20px" }}
               />
               <p className="m-3"> Notifications</p>
             </div>
@@ -188,7 +199,7 @@ const Contact = () => {
             <div style={{ display: "flex", alignItems: "center" }}>
               <Image
                 src={ContactIcon3}
-                style={{ width: 20, height: 20, marginLeft: "20px" }}
+                style={{ width: 20, marginLeft: "20px" }}
               />
               <p className="m-3"> Automation</p>
             </div>
@@ -208,7 +219,7 @@ const Contact = () => {
             className="text-center"
             style={{ ...(isMobile && { marginTop: "50px" }) }}
           >
-            <Image src={ContactChat} fluid />
+            <Image src={heroimage} style={{ width: "70%" }} fluid />
           </Col>
         </Row>
       </Container>
@@ -219,24 +230,17 @@ const Contact = () => {
        *
        * */}
       <Row style={{ marginTop: "70px" }}>
-        <Col md={1}></Col>
-        <Col md={10} className="text-center mt-2">
-          <Row>
-            <div
-              style={{ overflowX: "scroll", width: "100%", display: "flex" }}
-            >
-              {logoName.map((l) => {
-                return <Logos ImageName={l} />;
-              })}
-            </div>
-          </Row>
-        </Col>
-        <Col md={1}></Col>
+        <CustomSlider />
       </Row>
 
       <Row
         className="align-items-center"
-        style={{ marginTop: "70px", background: "#F9F9F9", paddingTop: "30px" }}
+        style={{
+          marginTop: "70px",
+          background: "#F9F9F9",
+          paddingTop: "30px",
+          ...(isMobile && { width: "103%" }),
+        }}
       >
         <Col md={12} className="text-center mt-4">
           <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
@@ -246,7 +250,7 @@ const Contact = () => {
             </span>
           </Heading>
         </Col>
-        <Col md={12} className="text-center m-4">
+        <Col md={12} className="text-center m-4 margin-item">
           <Row className="justify-content-center">
             <Col className="p-4" md={3}>
               <div>
@@ -257,18 +261,22 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {" "}
-                  {`>`} {count} {`%`}
+                  {`>`}
+                  {count}
+                  {`%`}
                 </p>
                 <Content style={{ fontSize: "24px" }}>Open Rate</Content>
               </div>
             </Col>
             <Col
-              className="p-4"
-              md={2}
+              className="m-4 marginHori"
+              md={3}
               style={{
-                borderLeft: "1px solid #000000",
-                borderRight: "1px solid #000000",
+                borderLeft: "1px solid rgba(0, 0, 0, 0.2)",
+                borderRight: "1px solid rgba(0, 0, 0, 0.2)",
+                marginLeft: 0,
+                marginRight: 0,
+                ...(isMobile && { border: "none" }),
               }}
             >
               <div>
@@ -279,8 +287,7 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {" "}
-                  {`>`} {count1} {`%`}
+                  {`>${count1}%`}
                 </p>
                 <Content style={{ fontSize: "24px" }}>Open Documents</Content>
               </div>
@@ -294,8 +301,7 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {" "}
-                  {`>`} {parseFloat(count2).toFixed(2)}
+                  {`>${parseFloat(count2).toFixed(1)}`}
                 </p>
                 <Content style={{ fontSize: "24px" }}>
                   Billion Global Users
@@ -312,8 +318,11 @@ const Contact = () => {
       */}
 
       <Row
-        style={{ marginTop: "70px", ...(isMobile && { padding: "30px" }) }}
-        className="align-items-center"
+        style={{
+          marginTop: "70px",
+          ...(isMobile && { padding: "30px", marginTop: "30px" }),
+        }}
+        className="align-items-center reverse-row2"
       >
         <Col md={6}>
           <div
@@ -322,7 +331,14 @@ const Contact = () => {
               justifyContent: "center",
             }}
           >
-            <Image src={Boy3Chat} fluid style={{ width: "70%" }} />
+            <Image
+              src={Carinsurance}
+              fluid
+              style={{
+                width: "75%",
+                ...(isMobile && { width: "90%", marginTop: "0px" }),
+              }}
+            />
           </div>
         </Col>
         <Col md={6}>
@@ -331,14 +347,14 @@ const Contact = () => {
               textAlign: "left",
               lineHeight: "64px",
               ...(isMobile && mobileHeadingFont),
-              ...(isMobile && { marginTop: "30px" }),
+              ...(isMobile && { marginTop: "50px" }),
             }}
           >
-            Integrate Excel, CRM, Order Management, billing systems with{" "}
+            Integrate Excel, CRM, Order Management, billing systems <br /> with{" "}
             <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
               BlueSecures{" "}
             </span>{" "}
-            API platform to automate marketing campaigns
+            API <br /> platform to automate <br /> marketing campaigns
           </Heading>
           <Content
             style={{
@@ -346,6 +362,8 @@ const Contact = () => {
               width: "100%",
               textAlign: "left",
               marginBottom: "40px",
+              fontweight: 500,
+              fontSize: "25px",
             }}
           >
             Reach Millions of customers on{" "}
@@ -353,7 +371,7 @@ const Contact = () => {
               WhatsApp
             </span>
           </Content>
-          <ul>
+          <ul style={{marginLeft:"-20px"}}>
             <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
               Send promotional messages and personalized notifications.
             </li>
@@ -375,7 +393,7 @@ const Contact = () => {
        */}
 
       <Row
-        className="align-items-center"
+        className="align-items-center reverse-row1"
         style={{ marginTop: "140px", ...(isMobile && { marginTop: "30px" }) }}
       >
         <Col md={6}>
@@ -400,6 +418,8 @@ const Contact = () => {
                 width: "100%",
                 marginTop: "30px",
                 marginBottom: "30px",
+                fontSize: "25px",
+                fontWeight: 500,
               }}
             >
               {`Send Campaigns Notification and CTA Increase`}{" "}
@@ -409,7 +429,7 @@ const Contact = () => {
               </span>
             </Content>
 
-            <ul>
+            <ul  style={{marginLeft:"-20px"}}>
               <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
                 Simplify your e-commerce business with BlueSecure's AI-powered
                 platform.
@@ -428,34 +448,34 @@ const Contact = () => {
 
         <Col md={6} className="text-center">
           <Image
-            src={messageScreen1}
+            src={shoppingcart}
             fluid
-            style={{ ...(isMobile && { width: "90%" }) }}
+            style={{ width: "75%", ...(isMobile && { width: "90%" }) }}
           />
         </Col>
       </Row>
 
       {/*  */}
       <Row
-        className="align-items-center"
+        className="align-items-center reverse-row2"
         style={{
           marginTop: "70px",
           paddingTop: "70px",
           paddingBottom: "70px",
           background: "#F9F9F9",
-          ...(isMobile && { padding: "30px" }),
+          ...(isMobile && { padding: "30px", marginTop: "20px" }),
         }}
       >
         <Col md={6} className="text-center">
-          <Image src={allText} fluid />
+          <Image src={payment} fluid />
         </Col>
-        <Col md={6}>
+        <Col md={6} style={{ ...(isMobile && { marginTop: "50px" }) }}>
           <Heading
             style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
           >
             {" "}
-            Integrate with billing platforms and automate reminders with payment
-            links
+            Integrate with billing platforms <br /> and automate reminders{" "}
+            <br /> with payment links
           </Heading>
           <Content
             style={{
@@ -463,6 +483,8 @@ const Contact = () => {
               width: "100%",
               marginTop: "30px",
               marginBottom: "30px",
+              fontSize: "25px",
+              fontWeight: 500,
             }}
           >
             <span
@@ -470,7 +492,7 @@ const Contact = () => {
             >{`> 90%`}</span>{" "}
             {`on time payment`}
           </Content>
-          <ul>
+          <ul  style={{marginLeft:"-20px"}}>
             <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
               BlueSecures API platform has built in agent messaging licenses.
             </li>
@@ -485,12 +507,19 @@ const Contact = () => {
       </Row>
       {/*  */}
       <Row
-        className="align-items-center"
-        style={{ marginBottom: "100px", marginTop: "70px" }}
+        className="align-items-center reverse-row1"
+        style={{
+          marginBottom: "100px",
+          marginTop: "70px",
+          ...(isMobile && { marginBottom: "0px" }),
+        }}
       >
         <Col
           md={6}
-          style={{ paddingLeft: "140px", ...(isMobile && { padding: "30px" }) }}
+          style={{
+            paddingLeft: "140px",
+            ...(isMobile && { padding: "30px", marginTop: "30px" }),
+          }}
         >
           <Heading
             style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
@@ -533,7 +562,7 @@ const Contact = () => {
             by 10X
           </Content>
 
-          <ul>
+          <ul style={{ marginLeft: "-25px" }}>
             <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
               Chatbots for sales, support and services.
             </li>
@@ -545,7 +574,7 @@ const Contact = () => {
         </Col>
 
         <Col md={6} className="text-center">
-          <Image src={allGroup} fluid />
+          <Image src={chatbot} fluid />
         </Col>
       </Row>
       <Footer />

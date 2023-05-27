@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
-import girlImage from "../../assets/png/girlChat.png";
+import girlImage from "../../assets/images/homepage/hero1.jpg";
+import chatww from "../../assets/images/homepage/chatww.png";
 import chatScreen from "../../assets/png/chatScreen.png";
-import Bluechat from "../../assets/png/bluechat.png";
+import Bluechat from "../../assets/images/homepage/what.png";
 import Icon1 from "../../assets/png/icon1.png";
 import Icon2 from "../../assets/png/icon2.png";
 import Icon3 from "../../assets/png/icon3.png";
 import Icon4 from "../../assets/png/icon4.png";
-import Desktop from "../../assets/png/desktop.png";
+import Desktop from "../../assets/images/homepage/3rdsection.png";
 import Icon11 from "../../assets/png/icon11.png";
 import Icon12 from "../../assets/png/icon12.png";
 import Icon13 from "../../assets/png/icon13.png";
@@ -32,7 +33,27 @@ import { Heading } from "../heading";
 import { Content } from "../content";
 import { CustomButton } from "../button";
 import "./chat.css";
+import CustomSlider from "../slider";
+import BlueIcon from "../../assets/images/homepage/blue.svg";
+import WA from "../../assets/images/homepage/wa.svg";
+import Robo from "../../assets/images/homepage/robo.svg";
+import Group from "../../assets/images/homepage/group.svg";
+import Focus from "../../assets/images/homepage/focus.svg";
+import intel from "../../assets/images/homepage/intel.svg";
+import user_setting from "../../assets/images/homepage/user-setting.svg";
+import ChatHistory from "../../assets/images/homepage/ChatHistory.svg";
+import E2E from "../../assets/images/homepage/end-to-end.svg";
+import ScrollAnimation from "react-animate-on-scroll";
+import { Link } from "react-router-dom";
 
+export const logoName = [
+  ComLogo7,
+  ComLogo8,
+  ComLogo9,
+  ComLogo10,
+  ComLogo11,
+  ComLogo12,
+];
 const Homepage = () => {
   const fadeFromLeftAnimation = `
   @keyframes fade-in {
@@ -54,19 +75,12 @@ const Homepage = () => {
     ComLogo5,
     ComLogo6,
   ];
-  const logoName = [
-    ComLogo7,
-    ComLogo8,
-    ComLogo9,
-    ComLogo10,
-    ComLogo11,
-    ComLogo12,
-  ];
+
   const Logos = ({ ImageName }) => {
     return (
-      <Col md={2}>
+      <li>
         <Image style={{ maxHeight: "50px" }} src={ImageName} />
-      </Col>
+      </li>
     );
   };
   const ImageDiv = ({ ImageName, Description }) => {
@@ -80,7 +94,7 @@ const Homepage = () => {
           borderRadius: "10px",
         }}
       >
-        <Image src={ImageName} style={{ width: 30, height: 30 }} />
+        <Image src={ImageName} style={{ width: 30 }} />
         <p className="m-4"> {Description}</p>
       </div>
     );
@@ -107,34 +121,73 @@ const Homepage = () => {
             style={{ animation: "fade-in 0.5s ease-out forwards" }}
           >
             <Col md={6} style={{ paddingBottom: "70px" }} className="pt-5">
-              <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
-                BlueSecures Messaging
-              </Heading>
-              <Content className="mr-4">
-                Enable sales, support & deskless employees on BlueSecures to
-                engage with customers on{" "}
-                <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
-                  WhatsApp.
-                </span>
-              </Content>
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
+              <ScrollAnimation
+                animateIn="bounceInRight"
+                animateOut="bounceOutLeft"
               >
-                <Image style={{ width: "75%" }} src={girlImage} fluid />
-              </div>
-              <div className="mt-5">
-                <Content>Secure Customer & Company Business Data</Content>
-              </div>
-              <div
-                style={{ display: "flex", justifyContent: "center" }}
-                className="mt-3"
-              >
-                <CustomButton>Know More</CustomButton>
-              </div>
+                <div>
+                  {isMobile && (
+                    <Image
+                      style={{
+                        width: "75%",
+                        ...(isMobile && { width: "90%" }),
+                      }}
+                      src={girlImage}
+                      fluid
+                    />
+                  )}
+                  <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+                    BlueSecures Messaging
+                  </Heading>
+                  <Content className="mr-4">
+                    Emoloyees using{" "}
+                    <span style={{ color: "#1AD03F" }}>WhatsApp</span> at work ?
+                    losing customers & data ? with{" "}
+                    <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
+                      BlueSecures,
+                    </span>{" "}
+                    retain & message customers on{" "}
+                    <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
+                  </Content>
+                  <div
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {!isMobile && (
+                      <Image
+                        style={{
+                          width: "55%",
+                          maxHeight: "26vw",
+                          ...(isMobile && { width: "90%" }),
+                        }}
+                        src={girlImage}
+                        fluid
+                      />
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <Content>Secure Customer & Company Business Data</Content>
+                </div>
+                <div
+                  style={{ display: "flex", justifyContent: "center" }}
+                  className="mt-3"
+                >
+                  <CustomButton>
+                    <Link
+                      className="button-link"
+                      style={{ color: "white" }}
+                      to="/"
+                    >
+                      Know More
+                    </Link>
+                  </CustomButton>
+                </div>
+              </ScrollAnimation>
             </Col>
             {/* second column */}
             <Col
@@ -142,218 +195,286 @@ const Homepage = () => {
               className="text-center pt-5"
               style={{ backgroundColor: "#F9F9F9", paddingBottom: "70px" }}
             >
-              <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
-                BlueSecures Messaging
-              </Heading>
-              <Content>
-                AI driven marketing platform to engage with customers on{" "}
-                <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
-              </Content>
-              <Image src={chatScreen} fluid />
-              <div className="mt-5">
-                <Content>
-                  Campaigns, Notifications, Payment Links & Chatbots
-                </Content>
-              </div>
-              <div
-                style={{ display: "flex", justifyContent: "center" }}
-                className="mt-3"
+              <ScrollAnimation
+                animateIn="bounceInRight"
+                animateOut="bounceOutLeft"
               >
-                <CustomButton>Know More</CustomButton>
-              </div>
+                <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
+                  BlueSecures AI
+                </Heading>
+                <Content>
+                  AI driven marketing platform to engage <br /> with customers
+                  on <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
+                </Content>
+                <Image
+                  src={chatww}
+                  style={{
+                    maxHeight: "26vw",
+                    ...(isMobile && { width: "60%", maxHeight: "100vh" }),
+                  }}
+                  fluid
+                />
+                <div className="mt-5">
+                  <Content>
+                    Campaigns, Notifications, Payment Links & Chatbots
+                  </Content>
+                </div>
+                <div
+                  style={{ display: "flex", justifyContent: "center" }}
+                  className="mt-3"
+                >
+                  <CustomButton>
+                    <Link
+                      className="button-link"
+                      style={{ color: "white" }}
+                      to="/contact"
+                    >
+                      Know More
+                    </Link>
+                  </CustomButton>
+                </div>
+              </ScrollAnimation>
             </Col>
           </Row>
           {/* First Div End */}
 
           {/* Second Div Start */}
-          <Row style={{ marginTop: "140px" }}>
+          <Row
+            style={{
+              marginTop: "140px",
+              ...(isMobile && { marginTop: "30px" }),
+            }}
+          >
             <Col md={6}>
-              <p
-                className="mr-4"
-                style={{ fontFamily: "Helvetica Neue", fontSize: "2.5rem" }}
-              ></p>
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
+              <ScrollAnimation
+                animateIn="bounceInRight"
+                animateOut="bounceOutLeft"
               >
-                <Image style={{ width: "68%" }} src={Bluechat} fluid />
-              </div>
-            </Col>
-            <Col style={{ paddingLeft: "60px" }} md={6} className="mt-4">
-              <Heading
-                style={{
-                  textAlign: "left",
-                  ...(isMobile && mobileHeadingFont),
-                }}
-              >
-                BlueSecures Messaging
-              </Heading>
-              <b>
-                <Content
+                <p
+                  className="mr-4"
+                  style={{ fontFamily: "Helvetica Neue", fontSize: "2.5rem" }}
+                ></p>
+                <div
                   style={{
                     width: "100%",
-                    textAlign: "left",
-                    margin: "0",
-                    fontSize: "25px",
-                    marginTop: "30px",
+                    display: "flex",
+                    justifyContent: "center",
                   }}
                 >
-                  Two way communication between <br />
-                  <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
-                    BlueSecures{" "}
-                  </span>
-                  &
-                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
-                    {" "}
-                    WhatsApp.
-                  </span>
-                </Content>
-              </b>
-              <div
-                className="mt-5"
-                style={{ display: "flex", alignItems: "center" }}
+                  <Image
+                    style={{ width: "68%", ...(isMobile && { width: "90%" }) }}
+                    src={Bluechat}
+                    fluid
+                  />
+                </div>
+              </ScrollAnimation>
+            </Col>
+            <Col style={{ paddingLeft: "60px" }} md={6} className="mt-4">
+              <ScrollAnimation
+                animateIn="bounceInRight"
+                animateOut="bounceOutLeft"
               >
-                <Image src={Icon1} style={{ width: 30, height: 30 }} />
-                <p className="m-3">
-                  <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
-                    BlueSecures{" "}
-                  </span>
-                  <span style={{ color: "#526A7E" }}> API Platform</span>
-                </p>
-              </div>
+                <Heading
+                  style={{
+                    textAlign: "left",
+                    marginTop: "60px",
+                    ...(isMobile && mobileHeadingFont),
+                  }}
+                >
+                  BlueSecures Messaging
+                </Heading>
+                <b>
+                  <Content
+                    style={{
+                      width: "100%",
+                      textAlign: "left",
+                      margin: "0",
+                      fontSize: "25px",
+                      marginTop: "30px",
+                    }}
+                  >
+                    Two way communication between <br />
+                    <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
+                      BlueSecures{" "}
+                    </span>
+                    &
+                    <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                      {" "}
+                      WhatsApp.
+                    </span>
+                  </Content>
+                </b>
+                <div
+                  className="mt-5"
+                  style={{ display: "flex", alignItems: "center" }}
+                >
+                  <Image src={BlueIcon} style={{ width: 30 }} />
+                  <p className="m-3">
+                    <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
+                      BlueSecures{" "}
+                    </span>
+                    <span style={{ color: "#526A7E" }}> API Platform</span>
+                  </p>
+                </div>
 
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Image src={Icon3} style={{ width: 30, height: 30 }} />
-                <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
-                  <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                    WhatsApp
-                  </span>
-                  <span style={{ color: "#526A7E" }}> Business API</span>
-                </p>
-              </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Image src={WA} style={{ width: 30 }} />
+                  <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
+                    <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                      WhatsApp
+                    </span>
+                    <span style={{ color: "#526A7E" }}> Business API</span>
+                  </p>
+                </div>
 
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Image src={Icon2} style={{ width: 30, height: 30 }} />
-                <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
-                  <span style={{ color: "#526A7E" }}>
-                    Users on Blue and customers on{" "}
-                  </span>
-                  <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                    WhatsApp
-                  </span>
-                </p>
-              </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Image src={Robo} style={{ width: 30 }} />
+                  <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
+                    <span style={{ color: "#526A7E" }}>
+                      Users on Blue and customers on{" "}
+                    </span>
+                    <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                      WhatsApp
+                    </span>
+                  </p>
+                </div>
+              </ScrollAnimation>
             </Col>
           </Row>
           {/* Second Div End */}
 
-          <Row style={{ marginTop: "140px" }}>
+          <Row
+            style={{
+              marginTop: "140px",
+              ...(isMobile && { marginTop: "30px" }),
+            }}
+          >
             <Col md={12}>
-              <Container>
-                <Row>
-                  <Col md={6}>
-                    <Heading
-                      style={{
-                        textAlign: "left",
-                        ...(isMobile && mobileHeadingFont),
-                      }}
-                    >
-                      BlueSecures AI
-                    </Heading>
-                    <b>
-                      <Content
+              <ScrollAnimation
+                animateIn="bounceInRight"
+                animateOut="bounceOutLeft"
+              >
+                <Container>
+                  <Row>
+                    <Col md={6}>
+                      <Heading
                         style={{
-                          width: "100%",
                           textAlign: "left",
-                          margin: "0",
-                          fontSize: "25px",
-                          marginTop: "30px",
+                          ...(isMobile && mobileHeadingFont),
                         }}
                       >
-                        Send promotional messages to millions of users on
-                        <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                        BlueSecures AI
+                      </Heading>
+                      <b>
+                        <Content
+                          style={{
+                            width: "100%",
+                            textAlign: "left",
+                            margin: "0",
+                            fontSize: "25px",
+                            marginTop: "30px",
+                          }}
+                        >
+                          Send promotional messages to millions of users on
+                          <span
+                            style={{ color: "#1AD03F", fontWeight: "bold" }}
+                          >
+                            {" "}
+                            WhatsApp.
+                          </span>
+                        </Content>
+                      </b>
+
+                      <div
+                        className="mt-4"
+                        style={{ display: "flex", alignItems: "center" }}
+                      >
+                        <Image src={BlueIcon} style={{ width: 30 }} />
+                        <p
+                          className="m-3"
+                          style={{ fontFamily: "Helvetica Neue" }}
+                        >
                           {" "}
-                          WhatsApp.
-                        </span>
-                      </Content>
-                    </b>
+                          <span
+                            style={{ fontWeight: "bold", color: "#00ACFF" }}
+                          >
+                            BlueSecures API Platform{" "}
+                          </span>{" "}
+                          <span style={{ color: "#526A7E" }}>
+                            {" "}
+                            ( end to end encrypted )
+                          </span>
+                        </p>
+                      </div>
 
-                    <div
-                      className="mt-4"
-                      style={{ display: "flex", alignItems: "center" }}
-                    >
-                      <Image src={Icon1} style={{ width: 30, height: 30 }} />
-                      <p
-                        className="m-3"
-                        style={{ fontFamily: "Helvetica Neue" }}
-                      >
-                        {" "}
-                        <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
-                          BlueSecures API Platform{" "}
-                        </span>{" "}
-                        <span style={{ color: "#526A7E" }}>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <Image src={WA} style={{ width: 30 }} />
+                        <p
+                          className="m-3"
+                          style={{ fontFamily: "Helvetica Neue" }}
+                        >
                           {" "}
-                          ( end to end encrypted )
-                        </span>
-                      </p>
-                    </div>
+                          <span
+                            style={{ fontWeight: "bold", color: "#1AD03F" }}
+                          >
+                            WhatsApp
+                          </span>{" "}
+                          <span style={{ color: "#526A7E" }}>
+                            {" "}
+                            Business API
+                          </span>
+                        </p>
+                      </div>
 
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <Image src={Icon3} style={{ width: 30, height: 30 }} />
-                      <p
-                        className="m-3"
-                        style={{ fontFamily: "Helvetica Neue" }}
-                      >
-                        {" "}
-                        <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                          WhatsApp
-                        </span>{" "}
-                        <span style={{ color: "#526A7E" }}> Business API</span>
-                      </p>
-                    </div>
-
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <Image src={Icon2} style={{ width: 30, height: 30 }} />
-                      <p
-                        className="m-3"
-                        style={{ fontFamily: "Helvetica Neue" }}
-                      >
-                        {" "}
-                        <span style={{ color: "#526A7E" }}> Chatbot on </span>
-                        <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                          WhatsApp
-                        </span>
-                      </p>
-                    </div>
-
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <Image src={Icon4} style={{ width: 30, height: 30 }} />
-                      <p
-                        className="m-3"
-                        style={{ fontFamily: "Helvetica Neue" }}
-                      >
-                        {" "}
-                        <span style={{ color: "#526A7E" }}>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <Image src={Robo} style={{ width: 30 }} />
+                        <p
+                          className="m-3"
+                          style={{ fontFamily: "Helvetica Neue" }}
+                        >
                           {" "}
-                          Engage with millions of users on{" "}
-                        </span>
-                        <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                          WhatsApp
-                        </span>
-                      </p>
-                    </div>
-                  </Col>
-                  <Col md={6} className="text-center">
-                    <Image src={Desktop} fluid />
-                  </Col>
-                </Row>
-              </Container>
+                          <span style={{ color: "#526A7E" }}> Chatbot on </span>
+                          <span
+                            style={{ fontWeight: "bold", color: "#1AD03F" }}
+                          >
+                            WhatsApp
+                          </span>
+                        </p>
+                      </div>
+
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <Image src={Group} style={{ width: 30 }} />
+                        <p
+                          className="m-3"
+                          style={{ fontFamily: "Helvetica Neue" }}
+                        >
+                          {" "}
+                          <span style={{ color: "#526A7E" }}>
+                            {" "}
+                            Engage with millions of users on{" "}
+                          </span>
+                          <span
+                            style={{ fontWeight: "bold", color: "#1AD03F" }}
+                          >
+                            WhatsApp
+                          </span>
+                        </p>
+                      </div>
+                    </Col>
+                    <Col md={6} className="text-center">
+                      <Image src={Desktop} fluid />
+                    </Col>
+                  </Row>
+                </Container>
+              </ScrollAnimation>
             </Col>
           </Row>
-          <Row style={{ marginTop: "140px" }}>
+          <Row
+            style={{
+              marginTop: "140px",
+              ...(isMobile && { marginTop: "50px" }),
+            }}
+          >
             <Col md={12} className="text-center">
               <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
                 Functions of{" "}
@@ -368,7 +489,7 @@ const Homepage = () => {
             <Col md={8}>
               <Container>
                 <Row className="m-4">
-                  <Col md={6} className="text-center mt-2">
+                  <Col md={6} className=" mt-2">
                     <div
                       className="pl-4"
                       style={{
@@ -378,7 +499,7 @@ const Homepage = () => {
                         borderRadius: "10px",
                       }}
                     >
-                      <Image src={Icon11} style={{ width: 30, height: 30 }} />
+                      <Image src={intel} style={{ width: 30 }} />
                       <p className="m-4">
                         {" "}
                         Intelligent 2 way routing between{" "}
@@ -392,11 +513,7 @@ const Homepage = () => {
                       </p>
                     </div>
                   </Col>
-                  <Col
-                    md={6}
-                    sm={4}
-                    className="text-center mt-2 box-item-home12"
-                  >
+                  <Col md={6} sm={4} className="mt-2 box-item-home12">
                     <ImageDiv
                       ImageName={Icon14}
                       Description="Business can save, secure and own their data"
@@ -404,30 +521,30 @@ const Homepage = () => {
                   </Col>
                 </Row>
                 <Row className="m-4">
-                  <Col md={6} className="text-center mt-2 box-item-home12">
+                  <Col md={6} className="mt-2 box-item-home12">
                     <ImageDiv
-                      ImageName={Icon12}
+                      ImageName={Focus}
                       Description="Track messages both ways"
                     />
                   </Col>
 
                   <Col md={6} className="text-center mt-2 box-item-home12">
                     <ImageDiv
-                      ImageName={Icon15}
+                      ImageName={ChatHistory}
                       Description="Maintain Chat history"
                     />
                   </Col>
                 </Row>
                 <Row className="m-4">
-                  <Col md={6} className="text-center mt-2 box-item-home12">
+                  <Col md={6} className="mt-2 box-item-home12">
                     <ImageDiv
-                      ImageName={Icon13}
+                      ImageName={user_setting}
                       Description="User & rights management"
                     />
                   </Col>
-                  <Col md={6} className="text-center mt-2 box-item-home12">
+                  <Col md={6} className=" mt-2 box-item-home12">
                     <ImageDiv
-                      ImageName={Icon16}
+                      ImageName={E2E}
                       Description="End to end data encryption"
                     />
                   </Col>
@@ -443,7 +560,7 @@ const Homepage = () => {
           style={{
             backgroundColor: "#F9F9F9",
             paddingTop: "50px",
-            paddingBottom: "80px",
+            paddingBottom: "20px",
           }}
         >
           <Col md={12} className="text-center mt-2">
@@ -458,15 +575,19 @@ const Homepage = () => {
           </Col>
           <Col md={12} className="text-center mt-2">
             <Container>
-              <Row>
-                {logoName.map((l) => {
-                  return <Logos ImageName={l} />;
-                })}
-              </Row>
+              <CustomSlider />
+
+              {/* <div className="slider">
+                  <ul>
+                    {logoName.map((l) => {
+                      return <Logos ImageName={l} />;
+                    })}
+                  </ul>
+                </div> */}
             </Container>
           </Col>
         </Row>
-        <Footer />
+        <Footer isMobile={isMobile} />
       </div>
     </>
   );
