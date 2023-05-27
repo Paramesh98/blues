@@ -250,10 +250,7 @@ const Homepage = () => {
                 animateIn="bounceInRight"
                 animateOut="bounceOutLeft"
               >
-                <p
-                  className="mr-4"
-                  style={{ fontFamily: "Helvetica Neue", fontSize: "2.5rem" }}
-                ></p>
+                <p className="mr-4" style={{ fontSize: "2.5rem" }}></p>
                 <div
                   style={{
                     width: "100%",
@@ -319,7 +316,7 @@ const Homepage = () => {
 
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <Image src={WA} style={{ width: 30 }} />
-                  <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
+                  <p className="m-3" style={{}}>
                     <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
                       WhatsApp
                     </span>
@@ -329,7 +326,7 @@ const Homepage = () => {
 
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <Image src={Robo} style={{ width: 30 }} />
-                  <p className="m-3" style={{ fontFamily: "Helvetica Neue" }}>
+                  <p className="m-3" style={{}}>
                     <span style={{ color: "#526A7E" }}>
                       Users on Blue and customers on{" "}
                     </span>
@@ -390,10 +387,7 @@ const Homepage = () => {
                         style={{ display: "flex", alignItems: "center" }}
                       >
                         <Image src={BlueIcon} style={{ width: 30 }} />
-                        <p
-                          className="m-3"
-                          style={{ fontFamily: "Helvetica Neue" }}
-                        >
+                        <p className="m-3">
                           {" "}
                           <span
                             style={{ fontWeight: "bold", color: "#00ACFF" }}
@@ -409,10 +403,7 @@ const Homepage = () => {
 
                       <div style={{ display: "flex", alignItems: "center" }}>
                         <Image src={WA} style={{ width: 30 }} />
-                        <p
-                          className="m-3"
-                          style={{ fontFamily: "Helvetica Neue" }}
-                        >
+                        <p className="m-3">
                           {" "}
                           <span
                             style={{ fontWeight: "bold", color: "#1AD03F" }}
@@ -428,10 +419,7 @@ const Homepage = () => {
 
                       <div style={{ display: "flex", alignItems: "center" }}>
                         <Image src={Robo} style={{ width: 30 }} />
-                        <p
-                          className="m-3"
-                          style={{ fontFamily: "Helvetica Neue" }}
-                        >
+                        <p className="m-3">
                           {" "}
                           <span style={{ color: "#526A7E" }}> Chatbot on </span>
                           <span
@@ -444,10 +432,7 @@ const Homepage = () => {
 
                       <div style={{ display: "flex", alignItems: "center" }}>
                         <Image src={Group} style={{ width: 30 }} />
-                        <p
-                          className="m-3"
-                          style={{ fontFamily: "Helvetica Neue" }}
-                        >
+                        <p className="m-3">
                           {" "}
                           <span style={{ color: "#526A7E" }}>
                             {" "}

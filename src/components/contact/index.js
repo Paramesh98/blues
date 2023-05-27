@@ -371,15 +371,15 @@ const Contact = () => {
               WhatsApp
             </span>
           </Content>
-          <ul style={{marginLeft:"-20px"}}>
-            <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+          <ul style={{ marginLeft: "-20px" }}>
+            <li style={{ color: "#526A7E" }}>
               Send promotional messages and personalized notifications.
             </li>
-            <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+            <li style={{ color: "#526A7E" }}>
               {" "}
               Automate reminders, conformations and online payments.
             </li>
-            <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+            <li style={{ color: "#526A7E" }}>
               Get real time campaign and performance MIS, metrics and insights.
             </li>
           </ul>
@@ -429,16 +429,16 @@ const Contact = () => {
               </span>
             </Content>
 
-            <ul  style={{marginLeft:"-20px"}}>
-              <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+            <ul style={{ marginLeft: "-20px" }}>
+              <li style={{ color: "#526A7E" }}>
                 Simplify your e-commerce business with BlueSecure's AI-powered
                 platform.
               </li>
-              <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+              <li style={{ color: "#526A7E" }}>
                 Automate your order management process for greater efficiency
                 and accuracy.
               </li>
-              <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+              <li style={{ color: "#526A7E" }}>
                 Improve customer satisfaction with real-time updates on their
                 order status.
               </li>
@@ -492,11 +492,11 @@ const Contact = () => {
             >{`> 90%`}</span>{" "}
             {`on time payment`}
           </Content>
-          <ul  style={{marginLeft:"-20px"}}>
-            <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+          <ul style={{ marginLeft: "-20px" }}>
+            <li style={{ color: "#526A7E" }}>
               BlueSecures API platform has built in agent messaging licenses.
             </li>
-            <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+            <li style={{ color: "#526A7E" }}>
               Broadcast messages to millions of users on{" "}
               <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
                 WhatsApp.
@@ -563,10 +563,10 @@ const Contact = () => {
           </Content>
 
           <ul style={{ marginLeft: "-25px" }}>
-            <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+            <li style={{ color: "#526A7E" }}>
               Chatbots for sales, support and services.
             </li>
-            <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
+            <li style={{ color: "#526A7E" }}>
               BlueSecures API platform has built in agent messaging licenses for
               sales and support.
             </li>
