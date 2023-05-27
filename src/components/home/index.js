@@ -152,7 +152,6 @@ const Home = () => {
             <p
               className="mr-4"
               style={{
-                fontFamily: "Helvetica Neue",
                 fontSize: "15px",
                 marginTop: "100px",
                 ...(isMobile && { marginTop: "30px" }),
@@ -181,7 +180,6 @@ const Home = () => {
             <p
               className="mr-4 mt-5"
               style={{
-                fontFamily: "Helvetica Neue",
                 fontSize: "1.56rem",
                 color: "#526A7E",
               }}
@@ -248,7 +246,6 @@ const Home = () => {
             >
               <li
                 style={{
-                  fontFamily: "Helvetica Neue",
                   fontSize: "15px",
                   color: "#526A7E",
                   marginTop: "40px",
@@ -262,7 +259,6 @@ const Home = () => {
               </li>
               <li
                 style={{
-                  fontFamily: "Helvetica Neue",
                   fontSize: "15px",
                   color: "#526A7E",
                 }}
@@ -395,7 +391,6 @@ const Home = () => {
 
                 <p
                   style={{
-                    fontFamily: "Helvetica Neue",
                     fontSize: "15px",
                     color: "#526A7E",
                   }}
