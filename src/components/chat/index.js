@@ -203,8 +203,8 @@ const Homepage = () => {
                   BlueSecures AI
                 </Heading>
                 <Content>
-                  AI driven marketing platform to engage with customers on{" "}
-                  <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
+                  AI driven marketing platform to engage <br /> with customers
+                  on <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
                 </Content>
                 <Image
                   src={chatww}

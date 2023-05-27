@@ -261,8 +261,9 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {" "}
-                  {`>`} {count} {`%`}
+                  {`>`}
+                  {count}
+                  {`%`}
                 </p>
                 <Content style={{ fontSize: "24px" }}>Open Rate</Content>
               </div>
@@ -286,8 +287,7 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {" "}
-                  {`>`} {count1} {`%`}
+                  {`>${count1}%`}
                 </p>
                 <Content style={{ fontSize: "24px" }}>Open Documents</Content>
               </div>
@@ -301,8 +301,7 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {" "}
-                  {`>`} {parseFloat(count2).toFixed(2)}
+                  {`>${parseFloat(count2).toFixed(1)}`}
                 </p>
                 <Content style={{ fontSize: "24px" }}>
                   Billion Global Users
@@ -351,11 +350,11 @@ const Contact = () => {
               ...(isMobile && { marginTop: "50px" }),
             }}
           >
-            Integrate Excel, CRM, Order Management, billing systems with{" "}
+            Integrate Excel, CRM, Order Management, billing systems <br /> with{" "}
             <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
               BlueSecures{" "}
             </span>{" "}
-            API platform to automate marketing campaigns
+            API <br /> platform to automate <br /> marketing campaigns
           </Heading>
           <Content
             style={{
@@ -363,6 +362,8 @@ const Contact = () => {
               width: "100%",
               textAlign: "left",
               marginBottom: "40px",
+              fontweight: 500,
+              fontSize: "25px",
             }}
           >
             Reach Millions of customers on{" "}
@@ -370,7 +371,7 @@ const Contact = () => {
               WhatsApp
             </span>
           </Content>
-          <ul>
+          <ul style={{marginLeft:"-20px"}}>
             <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
               Send promotional messages and personalized notifications.
             </li>
@@ -417,6 +418,8 @@ const Contact = () => {
                 width: "100%",
                 marginTop: "30px",
                 marginBottom: "30px",
+                fontSize: "25px",
+                fontWeight: 500,
               }}
             >
               {`Send Campaigns Notification and CTA Increase`}{" "}
@@ -426,7 +429,7 @@ const Contact = () => {
               </span>
             </Content>
 
-            <ul>
+            <ul  style={{marginLeft:"-20px"}}>
               <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
                 Simplify your e-commerce business with BlueSecure's AI-powered
                 platform.
@@ -471,8 +474,8 @@ const Contact = () => {
             style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
           >
             {" "}
-            Integrate with billing platforms and automate reminders with payment
-            links
+            Integrate with billing platforms <br /> and automate reminders{" "}
+            <br /> with payment links
           </Heading>
           <Content
             style={{
@@ -480,6 +483,8 @@ const Contact = () => {
               width: "100%",
               marginTop: "30px",
               marginBottom: "30px",
+              fontSize: "25px",
+              fontWeight: 500,
             }}
           >
             <span
@@ -487,7 +492,7 @@ const Contact = () => {
             >{`> 90%`}</span>{" "}
             {`on time payment`}
           </Content>
-          <ul>
+          <ul  style={{marginLeft:"-20px"}}>
             <li style={{ fontFamily: "Helvetica Neue", color: "#526A7E" }}>
               BlueSecures API platform has built in agent messaging licenses.
             </li>

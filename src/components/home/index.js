@@ -549,9 +549,9 @@ const Home = () => {
                 >
                   Integrations
                 </p>
-                <p>
-                  Integrate with Active Directory, HRM, CRM, SCM & ERP Systems
-                  etc
+                <p style={{ fontSize: "15px" }}>
+                  Integrate with Active Directory, HRM, <br /> CRM, SCM & ERP
+                  Systems etc
                 </p>
               </div>
             </div>
@@ -576,7 +576,9 @@ const Home = () => {
                 >
                   Data storage
                 </p>
-                <p>Public Cloud, Private Cloud or on-premise</p>
+                <p style={{ fontSize: "15px" }}>
+                  Public Cloud, Private Cloud <br /> or on-premise
+                </p>
               </div>
             </div>
             <div
@@ -600,7 +602,9 @@ const Home = () => {
                 >
                   Certifications
                 </p>
-                <p>Certifications - ISO, VAPT,HIPAA, “ISO 27001”</p>
+                <p style={{ fontSize: "15px" }}>
+                  Certifications - ISO, VAPT, <br /> HIPAA, “ISO 27001”
+                </p>
               </div>
             </div>
           </Row>
