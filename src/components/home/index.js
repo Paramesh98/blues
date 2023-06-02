@@ -126,7 +126,7 @@ const Home = () => {
             <p style={{ color: "#526A7E", marginTop: "40px" }}>
               Enable sales, support & deskless employees on BlueSecures to
               engage with customers on{" "}
-              <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+              <span style={{ fontWeight: "bold", color: "#25d366" }}>
                 WhatsApp
               </span>
               .
@@ -172,7 +172,7 @@ const Home = () => {
                 BlueSecures{" "}
               </span>{" "}
               can send and receive messages with their customers who are on{" "}
-              <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+              <span style={{ color: "#25d366", fontWeight: "bold" }}>
                 {" "}
                 WhatsApp.
               </span>
@@ -229,7 +229,7 @@ const Home = () => {
             </Content>
             <Heading
               style={{
-                marginLeft: "-15px",
+                marginLeft: "-50px",
                 ...(isMobile && mobileHeadingFont),
               }}
             >
@@ -252,7 +252,7 @@ const Home = () => {
                 }}
               >
                 Employees market to customers who are on{" "}
-                <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                <span style={{ color: "#25d366", fontWeight: "bold" }}>
                   WhatsApp
                 </span>
                 .
@@ -316,7 +316,7 @@ const Home = () => {
                 />
                 <p>
                   Broadcast marketing collateral to customers who are on{" "}
-                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                  <span style={{ color: "#25d366", fontWeight: "bold" }}>
                     {" "}
                     WhatsApp.
                   </span>
@@ -383,7 +383,7 @@ const Home = () => {
                   }}
                 >
                   Use{" "}
-                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                  <span style={{ color: "#25d366", fontWeight: "bold" }}>
                     social messaging apps
                   </span>{" "}
                   because they don't have (or) use email?
@@ -486,7 +486,7 @@ const Home = () => {
                 <Image src={wa} className="mt-4" style={{ width: 40 }} />
                 <p style={{ color: "#526A7E" }}>
                   Send to{" "}
-                  <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                  <span style={{ color: "#25d366", fontWeight: "bold" }}>
                     Whatsapp
                   </span>
                 </p>

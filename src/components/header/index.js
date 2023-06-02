@@ -21,9 +21,9 @@ function Header() {
         <Navbar.Brand href="/">
           <img
             src={logo}
-            width="179"
             className="d-inline-block align-top"
             alt="Logo"
+            style={{ width: "120px" }}
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
