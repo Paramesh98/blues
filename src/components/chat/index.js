@@ -45,15 +45,22 @@ import ChatHistory from "../../assets/images/homepage/ChatHistory.svg";
 import E2E from "../../assets/images/homepage/end-to-end.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-router-dom";
+import essar from "../../assets/images/logo/essar.png";
+import hdfc from "../../assets/images/logo/hdfc.png";
+import kv from "../../assets/images/logo/karavya.png";
+import sy from "../../assets/images/logo/symmetrix.png";
+import think from "../../assets/images/logo/think.png";
+import toyota from "../../assets/images/logo/toyota.png";
 
-export const logoName = [
-  ComLogo7,
-  ComLogo8,
-  ComLogo9,
-  ComLogo10,
-  ComLogo11,
-  ComLogo12,
-];
+export const logoName = [essar, hdfc, kv, sy, think, toyota];
+// export const logoName = [
+//   ComLogo7,
+//   ComLogo8,
+//   ComLogo9,
+//   ComLogo10,
+//   ComLogo11,
+//   ComLogo12,
+// ];
 const Homepage = () => {
   const fadeFromLeftAnimation = `
   @keyframes fade-in {
@@ -141,13 +148,10 @@ const Homepage = () => {
                   </Heading>
                   <Content className="mr-4">
                     Emoloyees using{" "}
-                    <span style={{ color: "#1AD03F" }}>WhatsApp</span> at work ?
-                    losing customers & data ? with{" "}
-                    <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
-                      BlueSecures,
-                    </span>{" "}
-                    retain & message customers on{" "}
-                    <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
+                    <span style={{ color: "#25d366" }}>WhatsApp</span> at work ?
+                    losing customers & data ? <br /> with Now, enable employees
+                    to securely message each other & customers on WhatsApp.
+                    <span style={{ color: "#25d366" }}>WhatsApp.</span>
                   </Content>
                   <div
                     style={{
@@ -170,18 +174,18 @@ const Homepage = () => {
                   </div>
                 </div>
 
-                <div className="mt-5">
+                {/* <div className="mt-5">
                   <Content>Secure Customer & Company Business Data</Content>
-                </div>
+                </div> */}
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
-                  className="mt-3"
+                  className="mt-5"
                 >
                   <CustomButton>
                     <Link
                       className="button-link"
                       style={{ color: "white" }}
-                      to="/"
+                      to="/contact"
                     >
                       Know More
                     </Link>
@@ -203,9 +207,11 @@ const Homepage = () => {
                   BlueSecures AI
                 </Heading>
                 <Content>
-                  AI driven marketing platform to engage <br /> with customers
-                  on <span style={{ color: "#1AD03F" }}>WhatsApp.</span>
+                  AI driven campaign tools & chatbots to market <br /> to
+                  millions of users on{" "}
+                  <span style={{ color: "#25d366" }}>WhatsApp.</span>
                 </Content>
+                <br />
                 <Image
                   src={chatww}
                   style={{
@@ -214,14 +220,14 @@ const Homepage = () => {
                   }}
                   fluid
                 />
-                <div className="mt-5">
+                {/* <div className="mt-5">
                   <Content>
                     Campaigns, Notifications, Payment Links & Chatbots
                   </Content>
-                </div>
+                </div> */}
                 <div
                   style={{ display: "flex", justifyContent: "center" }}
-                  className="mt-3"
+                  className="mt-5"
                 >
                   <CustomButton>
                     <Link
@@ -288,6 +294,7 @@ const Homepage = () => {
                       margin: "0",
                       fontSize: "25px",
                       marginTop: "30px",
+                      lineHeight: "38px",
                     }}
                   >
                     Two way communication between <br />
@@ -295,7 +302,7 @@ const Homepage = () => {
                       BlueSecures{" "}
                     </span>
                     &
-                    <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+                    <span style={{ color: "#25d366", fontWeight: "bold" }}>
                       {" "}
                       WhatsApp.
                     </span>
@@ -317,7 +324,7 @@ const Homepage = () => {
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <Image src={WA} style={{ width: 30 }} />
                   <p className="m-3" style={{}}>
-                    <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                    <span style={{ fontWeight: "bold", color: "#25d366" }}>
                       WhatsApp
                     </span>
                     <span style={{ color: "#526A7E" }}> Business API</span>
@@ -330,7 +337,7 @@ const Homepage = () => {
                     <span style={{ color: "#526A7E" }}>
                       Users on Blue and customers on{" "}
                     </span>
-                    <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+                    <span style={{ fontWeight: "bold", color: "#25d366" }}>
                       WhatsApp
                     </span>
                   </p>
@@ -370,11 +377,12 @@ const Homepage = () => {
                             margin: "0",
                             fontSize: "25px",
                             marginTop: "30px",
+                            lineHeight: "38px",
                           }}
                         >
                           Send promotional messages to millions of users on
                           <span
-                            style={{ color: "#1AD03F", fontWeight: "bold" }}
+                            style={{ color: "#25d366", fontWeight: "bold" }}
                           >
                             {" "}
                             WhatsApp.
@@ -406,7 +414,7 @@ const Homepage = () => {
                         <p className="m-3">
                           {" "}
                           <span
-                            style={{ fontWeight: "bold", color: "#1AD03F" }}
+                            style={{ fontWeight: "bold", color: "#25d366" }}
                           >
                             WhatsApp
                           </span>{" "}
@@ -423,14 +431,14 @@ const Homepage = () => {
                           {" "}
                           <span style={{ color: "#526A7E" }}> Chatbot on </span>
                           <span
-                            style={{ fontWeight: "bold", color: "#1AD03F" }}
+                            style={{ fontWeight: "bold", color: "#25d366" }}
                           >
                             WhatsApp
                           </span>
                         </p>
                       </div>
 
-                      <div style={{ display: "flex", alignItems: "center" }}>
+                      {/* <div style={{ display: "flex", alignItems: "center" }}>
                         <Image src={Group} style={{ width: 30 }} />
                         <p className="m-3">
                           {" "}
@@ -439,12 +447,12 @@ const Homepage = () => {
                             Engage with millions of users on{" "}
                           </span>
                           <span
-                            style={{ fontWeight: "bold", color: "#1AD03F" }}
+                            style={{ fontWeight: "bold", color: "#25d366" }}
                           >
                             WhatsApp
                           </span>
                         </p>
-                      </div>
+                      </div> */}
                     </Col>
                     <Col md={6} className="text-center">
                       <Image src={Desktop} fluid />
@@ -487,13 +495,13 @@ const Homepage = () => {
                       <Image src={intel} style={{ width: 30 }} />
                       <p className="m-4">
                         {" "}
-                        Intelligent 2 way routing between{" "}
+                        Intelligent routing between{" "}
                         <span style={{ fontWeight: "bold", color: "#00ACFF" }}>
                           Blue
                         </span>{" "}
                         and{" "}
-                        <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
-                          WA
+                        <span style={{ fontWeight: "bold", color: "#25d366" }}>
+                          WhatsApp
                         </span>
                       </p>
                     </div>
@@ -501,7 +509,7 @@ const Homepage = () => {
                   <Col md={6} sm={4} className="mt-2 box-item-home12">
                     <ImageDiv
                       ImageName={Icon14}
-                      Description="Business can save, secure and own their data"
+                      Description="Business can save & secure data"
                     />
                   </Col>
                 </Row>

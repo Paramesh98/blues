@@ -40,6 +40,7 @@ import chatbot from "../../assets/images/page2/chatbot.png";
 import heroimage from "../../assets/images/page2/Hero-image-whatsapp.png";
 import payment from "../../assets/images/page2/payment.png";
 import shoppingcart from "../../assets/images/page2/shoppingcart.png";
+import withphone from "../../assets/images/logo/withphone.jpg";
 
 const Contact = () => {
   const [width, setWidth] = useState(1000);
@@ -172,8 +173,9 @@ const Contact = () => {
                 </span>
               </Content>
             </b>
-            <p style={{ marginTop: "40px" }}>
-              AI driven marketing platform to engage with customers on WhatsApp.
+            <p style={{ marginTop: "15px" }}>
+              AI driven campaign tools & chatbots to market to millions of users
+              on WhatsApp.
             </p>
             <div
               style={{
@@ -245,7 +247,7 @@ const Contact = () => {
         <Col md={12} className="text-center mt-4">
           <Heading style={{ ...(isMobile && mobileHeadingFont) }}>
             Why engage with customers on{" "}
-            <span style={{ fontWeight: "bold", color: "#1AD03F" }}>
+            <span style={{ fontWeight: "bold", color: "#25d366" }}>
               WhatsApp?
             </span>
           </Heading>
@@ -261,7 +263,7 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {`>`}
+                  {`> `}
                   {count}
                   {`%`}
                 </p>
@@ -287,7 +289,7 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {`>${count1}%`}
+                  {`> ${count1}%`}
                 </p>
                 <Content style={{ fontSize: "24px" }}>Open Documents</Content>
               </div>
@@ -301,7 +303,7 @@ const Contact = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {`>${parseFloat(count2).toFixed(1)}`}
+                  {`> ${parseFloat(count2).toFixed(1)}`}
                 </p>
                 <Content style={{ fontSize: "24px" }}>
                   Billion Global Users
@@ -367,7 +369,7 @@ const Contact = () => {
             }}
           >
             Reach Millions of customers on{" "}
-            <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+            <span style={{ color: "#25d366", fontWeight: "bold" }}>
               WhatsApp
             </span>
           </Content>
@@ -420,6 +422,7 @@ const Contact = () => {
                 marginBottom: "30px",
                 fontSize: "25px",
                 fontWeight: 500,
+                lineHeight: "38px",
               }}
             >
               {`Send Campaigns Notification and CTA Increase`}{" "}
@@ -448,7 +451,7 @@ const Contact = () => {
 
         <Col md={6} className="text-center">
           <Image
-            src={shoppingcart}
+            src={withphone}
             fluid
             style={{ width: "75%", ...(isMobile && { width: "90%" }) }}
           />
@@ -498,7 +501,7 @@ const Contact = () => {
             </li>
             <li style={{ color: "#526A7E" }}>
               Broadcast messages to millions of users on{" "}
-              <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+              <span style={{ color: "#25d366", fontWeight: "bold" }}>
                 WhatsApp.
               </span>
             </li>
@@ -525,10 +528,11 @@ const Contact = () => {
             style={{ textAlign: "left", ...(isMobile && mobileHeadingFont) }}
           >
             Deploy chatbots on{" "}
-            <span style={{ color: "#1AD03F", fontWeight: "bold" }}>
+            <span style={{ color: "#25d366", fontWeight: "bold" }}>
               WhatsApp
             </span>{" "}
-            | Blue | Website | Customer App
+            | <span style={{ color: "#00ACFF" }}>Blue</span> | Website |
+            Customer App
           </Heading>
           <Content
             style={{
@@ -559,7 +563,7 @@ const Contact = () => {
             <span style={{ color: "#526A7E", fontWeight: "1" }}>
               and customer services
             </span>{" "}
-            by 10X
+            by 10x
           </Content>
 
           <ul style={{ marginLeft: "-25px" }}>
