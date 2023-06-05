@@ -112,7 +112,7 @@ const Homepage = () => {
     setWidth(window.screen.width || 1000);
   }, [window.screen.width]);
   const mobileHeadingFont = {
-    fontSize: "25px",
+    fontSize: "28px",
     lineHeight: "35px",
   };
   const isMobile = width < 500;
@@ -137,7 +137,7 @@ const Homepage = () => {
                     <Image
                       style={{
                         width: "75%",
-                        ...(isMobile && { width: "90%" }),
+                        ...(isMobile && { width: "90%", marginLeft:"5%", }),
                       }}
                       src={girlImage}
                       fluid
@@ -147,9 +147,8 @@ const Homepage = () => {
                     BlueSecures Messaging
                   </Heading>
                   <Content className="mr-4">
-                    Emoloyees using{" "}
+                    Employees using{" "}
                     <span style={{ color: "#25d366" }}>WhatsApp</span> for work?{" "}
-                    <br />
                     Losing customers & data? Now, enable employees to securely
                     message each other & customers on{" "}
                     <span style={{ color: "#25d366" }}>WhatsApp.</span>
@@ -166,7 +165,7 @@ const Homepage = () => {
                         style={{
                           width: "55%",
                           maxHeight: "26vw",
-                          ...(isMobile && { width: "90%" }),
+                          ...(isMobile && { width: "90%", }),
                         }}
                         src={girlImage}
                         fluid
@@ -296,7 +295,9 @@ const Homepage = () => {
                       fontSize: "25px",
                       marginTop: "30px",
                       lineHeight: "38px",
+                        ...(isMobile && {marginTop:"0"}),
                     }}
+                    
                   >
                     Two way communication between <br />
                     <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
@@ -351,7 +352,7 @@ const Homepage = () => {
           <Row
             style={{
               marginTop: "140px",
-              ...(isMobile && { marginTop: "30px" }),
+              ...(isMobile && { marginTop: "30px",}),
             }}
           >
             <Col md={12}>
@@ -360,12 +361,17 @@ const Homepage = () => {
                 animateOut="bounceOutLeft"
               >
                 <Container>
-                  <Row>
+                  <Row 
+                   style={{
+                          ...(isMobile && {marginTop:"30px"}),
+                        }} 
+                        className={isMobile && "reverse-row1"}
+                  >
                     <Col md={6}>
                       <Heading
                         style={{
                           textAlign: "left",
-                          ...(isMobile && mobileHeadingFont),
+                          ...(isMobile &&  {...mobileHeadingFont,marginTop:"20px"}),
                         }}
                       >
                         BlueSecures AI
@@ -379,7 +385,9 @@ const Homepage = () => {
                             fontSize: "25px",
                             marginTop: "30px",
                             lineHeight: "38px",
+                              ...(isMobile &&  {...mobileHeadingFont,marginTop:"0px", fontSize: "25px",}),
                           }}
+                          
                         >
                           Send promotional messages to millions of users on
                           <span
@@ -522,7 +530,7 @@ const Homepage = () => {
                     />
                   </Col>
 
-                  <Col md={6} className="text-center mt-2 box-item-home12">
+                  <Col md={6} className="mt-2 box-item-home12">
                     <ImageDiv
                       ImageName={ChatHistory}
                       Description="Maintain Chat history"

@@ -9,6 +9,11 @@
   .margin-item {
     margin-left: 0px !important;
   }
+  .margin11{
+  margin:0px !important;
+      padding-right: 0px;
+}
+
 }
 
 .margin-item {
@@ -18,3 +23,4 @@
   margin-left: 0 !important ;
   margin-left: 0 !important ;
 }
+
