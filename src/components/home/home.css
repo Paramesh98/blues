@@ -8,6 +8,7 @@
   width: 300px;
   border-radius: 10px;
   margin-right: 50px !important;
+  
 }
 .box-icons p {
   margin-top: 15px;
@@ -33,4 +34,10 @@
   .reverse-row2 {
     flex-direction: column;
   }
+  
+.box-style {
+
+  margin-right: 1.5rem !important;
+  
+}
 }

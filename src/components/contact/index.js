@@ -181,16 +181,17 @@ const Contact = () => {
               style={{
                 display: "flex",
                 alignItems: "center",
+                ...(isMobile && { marginLeft: "-20px" })
               }}
             >
               <Image
                 src={ContactIcon1}
-                style={{ width: 20, marginLeft: "20px" }}
+                style={{ width: 20, marginLeft: "20px",  }}
               />
               <p className="m-3"> Chatbots</p>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", ...(isMobile && { marginLeft: "-20px" }) }}>
               <Image
                 src={ContactIcon2}
                 style={{ width: 20, marginLeft: "20px" }}
@@ -198,7 +199,7 @@ const Contact = () => {
               <p className="m-3"> Notifications</p>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", ...(isMobile && { marginLeft: "-20px" }) }}>
               <Image
                 src={ContactIcon3}
                 style={{ width: 20, marginLeft: "20px" }}
@@ -252,7 +253,7 @@ const Contact = () => {
             </span>
           </Heading>
         </Col>
-        <Col md={12} className="text-center m-4 margin-item">
+        <Col md={12} className="text-center m-4 margin-item margin11">
           <Row className="justify-content-center">
             <Col style={{ paddingLeft: "0" }} className="p-4" md={3}>
               <div>

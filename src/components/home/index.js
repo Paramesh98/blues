@@ -231,7 +231,7 @@ const Home = () => {
             <Heading
               style={{
                 marginLeft: "-50px",
-                ...(isMobile && mobileHeadingFont),
+                ...(isMobile && {...mobileHeadingFont,marginLeft:"10px",textAlign:'left'}),
               }}
             >
               <span style={{ color: "#00ACFF", fontWeight: "bold" }}>
