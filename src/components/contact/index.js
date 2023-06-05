@@ -254,7 +254,7 @@ const Contact = () => {
         </Col>
         <Col md={12} className="text-center m-4 margin-item">
           <Row className="justify-content-center">
-            <Col className="p-4" md={3}>
+            <Col style={{ paddingLeft: "0" }} className="p-4" md={3}>
               <div>
                 <p
                   style={{
