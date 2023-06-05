@@ -119,13 +119,14 @@ const Home = () => {
                 width: "100%",
                 margin: "0",
                 textAlign: "left",
+                fontSize: "25px",
               }}
             >
               End to End Encrypted
             </Content>
-            <p style={{ color: "#526A7E", marginTop: "40px" }}>
-              Enable sales, support & deskless employees on BlueSecures to
-              engage with customers on{" "}
+            <p style={{ color: "#526A7E", marginTop: "15px" }}>
+              Employees using WhatsApp for work? Losing customers & data? Now,
+              enable employees to securely message each other & customers on{" "}
               <span style={{ fontWeight: "bold", color: "#25d366" }}>
                 WhatsApp
               </span>

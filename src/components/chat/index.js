@@ -47,9 +47,9 @@ import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-router-dom";
 import essar from "../../assets/images/logo/essar.png";
 import hdfc from "../../assets/images/logo/hdfc.png";
-import kv from "../../assets/images/logo/karavya.png";
+import kv from "../../assets/images/logo/kartavya.png";
 import sy from "../../assets/images/logo/symmetrix.png";
-import think from "../../assets/images/logo/think.png";
+import think from "../../assets/images/logo/clearthink.png";
 import toyota from "../../assets/images/logo/toyota.png";
 
 export const logoName = [essar, hdfc, kv, sy, think, toyota];
@@ -148,9 +148,10 @@ const Homepage = () => {
                   </Heading>
                   <Content className="mr-4">
                     Emoloyees using{" "}
-                    <span style={{ color: "#25d366" }}>WhatsApp</span> at work ?
-                    losing customers & data ? <br /> with Now, enable employees
-                    to securely message each other & customers on WhatsApp.
+                    <span style={{ color: "#25d366" }}>WhatsApp</span> for work?{" "}
+                    <br />
+                    Losing customers & data? Now, enable employees to securely
+                    message each other & customers on{" "}
                     <span style={{ color: "#25d366" }}>WhatsApp.</span>
                   </Content>
                   <div
@@ -185,7 +186,7 @@ const Homepage = () => {
                     <Link
                       className="button-link"
                       style={{ color: "white" }}
-                      to="/contact"
+                      to="/about"
                     >
                       Know More
                     </Link>
@@ -553,13 +554,13 @@ const Homepage = () => {
           style={{
             backgroundColor: "#F9F9F9",
             paddingTop: "50px",
-            paddingBottom: "20px",
+            paddingBottom: "50px",
           }}
         >
           <Col md={12} className="text-center mt-2">
             <Heading
               style={{
-                marginBottom: "50px",
+                marginBottom: "25px",
                 ...(isMobile && mobileHeadingFont),
               }}
             >
